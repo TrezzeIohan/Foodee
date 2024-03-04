@@ -4,14 +4,19 @@ export class Cart {
     constructor(
       public name: string,
       public shoppingList: Food[],
-      public suggestions: Food[]
+      public suggestions: Food[],
+      public totalPrice: number,
       // outros campos...
     ) {}
   
     // Você pode adicionar métodos aqui
-    totalPrice(): number {
+    GetTotalPrice(): number {
       // Soma o Valor dos itens da Shopping List e retorna seu valor
-      //return 
+      //return
+      this.shoppingList.forEach(food => {
+        this.totalPrice += food.price;
+      });
+      return this.totalPrice;
     }
 
     getSuggestions(): Food[]{
@@ -20,5 +25,6 @@ export class Cart {
 
     clearShoppingList(): void{
         // Clears the shoppingList array
+        this.shoppingList.length = 0;
     }
   }
