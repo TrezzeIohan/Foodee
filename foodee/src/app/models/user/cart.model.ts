@@ -1,4 +1,5 @@
 import { Food } from "../food/food.model";
+import { Main } from "../main.model";
 
 export class Cart {
     constructor(
@@ -17,10 +18,6 @@ export class Cart {
         this.totalPrice += food.price;
       });
       return this.totalPrice;
-    }
-
-    getSuggestions(): Food[]{
-        // Returns a list of foods that has specific tags?
     }
 
     clearShoppingList(): void{
