@@ -2,22 +2,22 @@ import { Food } from "../food/food.model";
 import { Main } from "../main.model";
 
 export class Cart {
+    public totalPrice: number
     constructor(
       public name: string,
       public shoppingList: Food[],
       public suggestions: Food[],
-      public totalPrice: number,
-      // outros campos...
-    ) {}
+    ) {
+      this.totalPrice = this.GetTotalPrice();
+    }
   
     // Você pode adicionar métodos aqui
     GetTotalPrice(): number {
-      // Soma o Valor dos itens da Shopping List e retorna seu valor
-      //return
+      let totalPrice = 0;
       this.shoppingList.forEach(food => {
-        this.totalPrice += food.price;
+        totalPrice += food.price;
       });
-      return this.totalPrice;
+      return totalPrice;
     }
 
     clearShoppingList(): void{

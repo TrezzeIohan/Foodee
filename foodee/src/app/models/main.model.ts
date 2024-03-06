@@ -5,9 +5,7 @@ import { User } from "./user/user.model";
 export class Main {
     constructor(
       public user: User,
-      public cart: Cart,
+      public menu: Food[] 
       // outros campos...
     ) {}
-  
-    
   }
