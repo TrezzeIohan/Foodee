@@ -3,12 +3,15 @@ export class User {
     constructor(
       public id: number,
       public name: string,
-      public cart: Cart
-      // outros campos...
+      public cart: Cart,
+      public photoPath: string,
     ) {}
   
-    // Você pode adicionar métodos aqui
-    displayName(): string {
-      return `User: ${this.name}`;
+    changeNameTo(newName: string): void {
+      this.name = newName;
+    }
+
+    changePhotoPathTo(newPath: string): void{
+      this.photoPath = newPath;
     }
   }
