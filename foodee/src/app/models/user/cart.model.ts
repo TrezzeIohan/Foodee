@@ -1,5 +1,4 @@
 import { Food } from "../food/food.model";
-import { Main } from "../main.model";
 
 export class Cart {
     public totalPrice: number
