@@ -14,6 +14,7 @@ export class Food {
       public offer: boolean,
       public suggestion: boolean,
       public image: string,
+      public extraIngredients: Ingredient[],
 
     // I didn't used a function to determine tags, because I thought the client would
     // want to detemine it because of marketing reasons, etc
