@@ -54,5 +54,4 @@ export class Food {
 
       return diaryNutriValues;
     }
-
   }
