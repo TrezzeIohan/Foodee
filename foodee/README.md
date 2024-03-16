@@ -1,3 +1,3 @@
 # Foodee
 
-One page application that simulates a food Ecommerce.
+One page web application that simulates a food Ecommerce.
