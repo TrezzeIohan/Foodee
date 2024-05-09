@@ -19,27 +19,30 @@
         </div>
     </div>
 
+    
+</div>
+
+<div class="container bg-success">
     <div class="row">
-        <div class="p-0">
-            <h1 class="main-text">Today's Menu</h1>
-            <ngx-slick-carousel class="carousel" 
+        <div class="col-12 p-0">
+            <h1 class="main-text default-padding-horizontal-only mb-0" id="todays-menu">Today's Menu</h1>
+
+            <ngx-slick-carousel class="carousel d-flex align-items-center" 
                         #slickModal="slick-carousel" 
                         [config]="slideConfig" 
-                        (init)="slickInit($event)"
-                        (breakpoint)="breakpoint($event)"
-                        (afterChange)="afterChange($event)"
-                        (beforeChange)="beforeChange($event)">
-                        @for (slide of slides; track slide.img) {
-            <div ngxSlickItem class="slide">
-                  <img src="{{ slide.img }}" alt="" width="100%">
-            </div>
+                        (init)="slickInit($event)">
+                        @for (slide of slides; track slide.id) {
+            <div ngxSlickItem class="big-slide d-flex flex-row bg-primary justify-content-around m-1 ps-4 py-2">
+                <div class="d-flex justify-content-center flex-column col-7">
+                    <h4 class="m-0">{{slide.title}}</h4>
+                    <p class="m-0">{{slide.description}}</p>
+                </div>
+                
+                <img src="{{ slide.img }}" alt="" width="35%" style="margin-top: -40px;">                
+            </div> 
         }
     </ngx-slick-carousel>
-    
-    <button (click)="addSlide()">Add</button>
-    <button (click)="removeSlide()">Remove</button>
-    <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
-    <button (click)="slickModal.unslick()">unslick</button>
+
         </div>
     </div>
 </div>
