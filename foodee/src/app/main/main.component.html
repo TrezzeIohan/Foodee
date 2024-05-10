@@ -70,24 +70,30 @@
 <!-- Best Offers -->
 <div class="container bg-primary">
     <div class="row">
-        <div class="col-12 p-0">
-            <h1 class="main-text default-padding-horizontal-only mb-0" id="todays-menu">Best Offers &#128149;</h1>
+        <div class="col-12 p-3 d-flex flex-column">
+            <div>            
+                <h1 class="main-text default-padding-horizontal-only mb-5 p-0" id="todays-menu">Best Offers <span><img src="../../assets/imgs/other/two-hearts.svg" alt="" class="img-fluid emoji"></span></h1>
+            </div>
 
-            <ngx-slick-carousel class="carousel d-flex align-items-center" 
-                        #slickModal="slick-carousel" 
-                        [config]="slideConfig" 
-                        (init)="slickInit($event)">
-                        @for (slide of slides; track slide.id) {
-            <div ngxSlickItem class="big-slide d-flex flex-row bg-primary justify-content-around m-1 ps-4 py-2">
-                <div class="d-flex justify-content-center flex-column col-7">
-                    <h4 class="m-0">{{slide.title}}</h4>
-                    <p class="m-0">{{slide.description}}</p>
-                </div>
+            <div class="d-flex flex-row custom-card shadow bg-white justify-content-center py-3 mb-3">
+
+                <img src="../../assets/imgs/float-burger.svg" alt="" class="card-image img-fluid me-3">
                 
-                <img src="{{ slide.img }}" alt="" width="35%" style="margin-top: -40px;">                
-            </div> 
-        }
-    </ngx-slick-carousel>
+                <div class="col-7 d-flex flex-column align-items-start">
+                    <h3 class="mb-0">Cheeseburger </h3>
+                    <p class="mb-0">A classic never gets old</p>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row custom-card shadow bg-white justify-content-center py-3 mb-3">
+
+                    <img src="../../assets/imgs/hotdog.svg" alt="" class="card-image img-fluid me-3">
+                    
+                    <div class="col-7 d-flex flex-column align-items-start">
+                        <h3 class="mb-0">Frenchdog</h3>
+                        <p class="mb-0">Tasty&Spicy <span><img src="../../assets/imgs/other/hot-pepper.svg" alt="" class="sm-emoji"></span><span><img src="../../assets/imgs/other/hot-pepper.svg" alt="" class="sm-emoji"></span><span><img src="../../assets/imgs/other/hot-pepper.svg" alt="" class="sm-emoji"></span></p>
+                    </div>
+            </div>
 
         </div>
     </div>
