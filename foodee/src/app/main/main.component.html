@@ -1,3 +1,4 @@
+<!-- Header Content -->
 <div class="container bg-danger default-padding">
     <div class="row bg-primary p-0">
         <header class="bg-success d-flex flex-row padding-profile-card d-flex align-items-center justify-content-between shadow">
@@ -22,10 +23,55 @@
     
 </div>
 
+<!-- Slides -->
 <div class="container bg-success">
     <div class="row">
         <div class="col-12 p-0">
             <h1 class="main-text default-padding-horizontal-only mb-0" id="todays-menu">Today's Menu</h1>
+
+            <ngx-slick-carousel class="carousel d-flex align-items-center" 
+                        #slickModal="slick-carousel" 
+                        [config]="slideConfig" 
+                        (init)="slickInit($event)">
+                        @for (slide of slides; track slide.id) {
+            <div ngxSlickItem class="big-slide d-flex flex-row bg-primary justify-content-around m-1 ps-4 py-2">
+                <div class="d-flex justify-content-center flex-column col-7">
+                    <h4 class="m-0">{{slide.title}}</h4>
+                    <p class="m-0">{{slide.description}}</p>
+                </div>
+                
+                <img src="{{ slide.img }}" alt="" width="35%" style="margin-top: -40px;">                
+            </div> 
+        }
+    </ngx-slick-carousel>
+
+        </div>
+
+        <div class="col-12 p-0">
+
+            <ngx-slick-carousel class="carousel d-flex align-items-center" 
+                        #slickModal="slick-carousel" 
+                        [config]="smallSlideConfig" 
+                        (init)="slickInit($event)">
+                        @for (slide of smallSlides; track slide.id) {
+            <div ngxSlickItem class="small-slide d-flex flex-column bg-primary m-1">
+                <div class="d-flex justify-content-center align-items-center flex-column pt-3">
+                    <p class="m-0 fw-normal">{{slide.title}}</p>
+                    <img src="{{slide.img}}" alt="" class="small-slide-img">
+                </div>            
+            </div> 
+        }
+    </ngx-slick-carousel>
+
+        </div>
+    </div>
+</div>
+
+<!-- Best Offers -->
+<div class="container bg-primary">
+    <div class="row">
+        <div class="col-12 p-0">
+            <h1 class="main-text default-padding-horizontal-only mb-0" id="todays-menu">Best Offers &#128149;</h1>
 
             <ngx-slick-carousel class="carousel d-flex align-items-center" 
                         #slickModal="slick-carousel" 
