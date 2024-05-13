@@ -34,8 +34,10 @@ slides = [
 
   smallSlideConfig = {
     "slidesToShow": 3, 
-    "slidesToScroll": 1, 
+    "slidesToScroll": 2, 
     "arrows": false,
+    "swipeToSLide": true,
+    
   };
   
   slickInit(e: any) {
