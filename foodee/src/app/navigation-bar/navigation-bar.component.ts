@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-navigation-bar',
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   templateUrl: './navigation-bar.component.html',
-  styleUrl: './navigation-bar.component.sass'
+  styleUrls: ['./navigation-bar.component.sass']  // Corrigido de styleUrl para styleUrls
 })
-export class NavigationBarComponent {
+export class NavigationBarComponent implements OnInit {
+  currentRoute: string = '';
 
+  constructor(private location: Location) { }
+
+  ngOnInit() {
+    this.currentRoute = this.location.path();
+  }
+  
 }
