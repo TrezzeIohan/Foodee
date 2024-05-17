@@ -33,7 +33,7 @@ slides = [
 
 // Small Slide Config
   smallSlides = [
-    {id: 1, img: "../assets/imgs/hamburguer.svg", title: "Burgers", bgColorClass:"bg-color-flax"},
+    {id: 1, img: "../assets/imgs/hamburger.svg", title: "Burgers", bgColorClass:"bg-color-flax"},
     {id: 2, img: "../assets/imgs/fries.svg", title: "Fries", bgColorClass:"bg-color-tea-rose"},
     {id: 3, img: "../assets/imgs/soda.svg", title: "Drinks", bgColorClass:"bg-color-ash-grey"},
     {id: 4, img: "../assets/imgs/choc.svg", title: "Desserts", bgColorClass:"bg-color-tropical-indigo"}
