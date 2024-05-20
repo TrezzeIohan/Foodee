@@ -3,7 +3,7 @@
         <div class="col-12 pt-2 px-3 d-flex flex-column align-items-start bg-color-light-coral" id="food-page-top-section">
             <!-- Food Title and Close Button -->
             <div class="d-flex flex-row justify-content-between col-12 pt-4 mb-3">
-                <h2 class="text-white" id="food-page-title">Mr. Cheezy</h2>
+                <h2 class="text-white" id="food-page-title">{{food?.name}}</h2>
 
                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="44" height="44" rx="16" fill="#F5CAC3"/>
@@ -14,16 +14,16 @@
             <!-- Description Pills -->
             <div class="d-flex flex-column mb-1">
                 <div class="description-pill px-3 py-2 mb-2 bg-color-linen">
-                    <p class="color-light-coral description-pill-text m-0">Classic Taste</p>
+                    <p class="color-light-coral description-pill-text m-0">{{food.tags[0]}}</p>
                 </div>
                 <div class="description-pill  w-auto">
-                    <p class="text-white description-pill-text description-pill m-0 px-3 py-2 bg-color-cambridge">Bestseller</p>
+                    <p class="text-white description-pill-text description-pill m-0 px-3 py-2 bg-color-cambridge">{{food.tags[1]}}</p>
                 </div>
             </div>
 
             <!-- Food Image -->
             <div id="food-page-top-image">
-                <img src="../../assets/imgs/hamburger.svg" alt="">
+                <img src="{{food.image}}" alt="">
             </div>
         </div>
     </div>
@@ -34,5 +34,21 @@
         <div class="col-12 pt-2 px-3 d-flex flex-column align-items-start " id="food-page-mid-section">
             <h3>Add More Flavour <span><img src="../../assets/imgs/other/star-struck.svg" class="emoji" alt=""></span></h3>
         </div>
+
+        <ngx-slick-carousel class="carousel d-flex align-items-center" 
+                        #slickModal="slick-carousel" 
+                        [config]="slideConfig">
+                        @for (slide of slides; track slide.id) {
+            <div ngxSlickItem class="d-flex flex-column align-items-center justify-content-between m-1 custom-shadow bg-color-ivory custom-shadow py-3 px-2 ingredient-slide">
+                <img src="{{ slide.img }}" alt="" class="img-fluid">    
+                <div class="d-flex justify-content-center flex-column col-7">
+                    <p class="m-0 dark-text sm-text fw-normal">{{slide.title}}</p>
+                    <p class="m-0 dark-text sm-text fw-normal">{{slide.description}}</p>
+                </div>
+                
+                            
+            </div> 
+        }
+    </ngx-slick-carousel>
     </div>
 </div>
