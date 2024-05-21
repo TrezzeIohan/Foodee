@@ -29,26 +29,44 @@
     </div>
 </div>
 
-<div class="container bg-color-true-white">
-    <div class="row pb-5 overflow-hidden">
-        <div class="col-12 pt-2 px-3 d-flex flex-column align-items-start " id="food-page-mid-section">
+<div class="container bg-color-true-white" id="food-page-mid-section">
+    <div class="row overflow-hidden">
+        <div class="col-12 py-2 px-3 d-flex flex-column align-items-start " >
             <h3>Add More Flavour <span><img src="../../assets/imgs/other/star-struck.svg" class="emoji" alt=""></span></h3>
         </div>
 
-        <ngx-slick-carousel class="carousel d-flex align-items-center" 
+        <ngx-slick-carousel class="carousel d-flex align-items-center px-0" id="extra-ingredients-carousel"
                         #slickModal="slick-carousel" 
                         [config]="slideConfig">
-                        @for (slide of slides; track slide.id) {
+                        @for (ingredient of food.extraIngredients; track ingredient.id) {
             <div ngxSlickItem class="d-flex flex-column align-items-center justify-content-between m-1 custom-shadow bg-color-ivory custom-shadow py-3 px-2 ingredient-slide">
-                <img src="{{ slide.img }}" alt="" class="img-fluid">    
-                <div class="d-flex justify-content-center flex-column col-7">
-                    <p class="m-0 dark-text sm-text fw-normal">{{slide.title}}</p>
-                    <p class="m-0 dark-text sm-text fw-normal">{{slide.description}}</p>
+                <img src="{{ ingredient.image }}" alt="" class="img-fluid">    
+                <div class="d-flex justify-content-center flex-column">
+                    <p class="m-0 dark-text sm-text fw-normal">{{ingredient.name}}</p>
+                    <p class="m-0 dark-text sm-text fw-normal">+${{ingredient.price}}</p>
                 </div>
                 
                             
             </div> 
         }
     </ngx-slick-carousel>
+    </div>
+</div>
+
+<div class="container bg-color-true-white" id="food-page-nutrition-section">
+    <div class="row overflow-hidden">
+        <div class="col-12 py-2 px-3 d-flex flex-row align-items-center justify-content-between " >
+            <h3>Nutrition Facts</h3> <h3>{{food.nutritionalValue.calories}}Cal</h3>
+        </div>
+
+        <div id="nutrition-facts">
+            <div class="d-flex flex-column">
+                <h3>{{food.nutritionalValue.fat}} g</h3>
+                <h3></h3>
+            </div>
+            <div></div>
+            <div></div>
+        </div>
+
     </div>
 </div>
