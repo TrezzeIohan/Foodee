@@ -3,7 +3,7 @@
         <div class="col-12 pt-2 px-3 d-flex flex-column align-items-start bg-color-light-coral" id="food-page-top-section">
             <!-- Food Title and Close Button -->
             <div class="d-flex flex-row justify-content-between col-12 pt-4 mb-3">
-                <h2 class="text-white" id="food-page-title">{{food?.name}}</h2>
+                <h2 class="text-white" id="food-page-title">{{food.name}}</h2>
 
                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="44" height="44" rx="16" fill="#F5CAC3"/>
@@ -59,13 +59,35 @@
             <h3>Nutrition Facts</h3> <h3>{{food.nutritionalValue.calories}}Cal</h3>
         </div>
 
-        <div id="nutrition-facts">
-            <div class="d-flex flex-column">
-                <h3>{{food.nutritionalValue.fat}} g</h3>
-                <h3></h3>
+        <div id="nutrition-facts" class="d-flex flex-row justify-content-between">
+
+            <div class="d-flex flex-column align-items-center">
+                <p class="p-0 m-0 nutrition-value-number">{{food.nutritionalValue.fat}} g</p>
+                <p class="nutrition-value-text">Total Fat ({{food.diaryNutriValues.get('dailyFatPercentage')}}% DV)</p>
             </div>
-            <div></div>
-            <div></div>
+
+            <div class="d-flex flex-column align-items-center">
+                <p class="p-0 m-0 nutrition-value-number">{{food.nutritionalValue.carbs}} g</p>
+                <p class="nutrition-value-text">Total Carbs ({{food.diaryNutriValues.get('dailyCarbsPercentage')}}% DV)</p>
+            </div>
+
+            <div class="d-flex flex-column align-items-center">
+                <p class="p-0 m-0 nutrition-value-number">{{food.nutritionalValue.protein}} g</p>
+                <p class="nutrition-value-text">Protein</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container bg-color-true-white last-session" id="food-page-description-section">
+    <div class="row overflow-hidden">
+        <div class="col-12 py-2 px-3 d-flex" >
+            <h3>Description</h3>
+        </div>
+
+        <div>
+            <p id="description-text">{{food.description}}</p>
         </div>
 
     </div>

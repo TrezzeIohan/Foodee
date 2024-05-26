@@ -41,6 +41,13 @@ export class Food {
         totalNutritionalValue.fat += ingredient.nutritionalValue.fat;
         totalNutritionalValue.protein += ingredient.nutritionalValue.protein;
       });
+  
+      // Arredonda os valores para duas casas decimais
+      totalNutritionalValue.calories = parseFloat(totalNutritionalValue.calories.toFixed(2));
+      totalNutritionalValue.carbs = parseFloat(totalNutritionalValue.carbs.toFixed(2));
+      totalNutritionalValue.fat = parseFloat(totalNutritionalValue.fat.toFixed(2));
+      totalNutritionalValue.protein = parseFloat(totalNutritionalValue.protein.toFixed(2));
+  
       return totalNutritionalValue;
     }
 
@@ -50,6 +57,9 @@ export class Food {
       
       let dailyCarbsPercentage = (100 * this.nutritionalValue.carbs) / dailyCarbs;
       let dailyFatPercentage = (100 * this.nutritionalValue.fat) / dailyFat;
+
+      dailyCarbsPercentage = parseFloat(dailyCarbsPercentage.toFixed(2));
+      dailyFatPercentage = parseFloat(dailyFatPercentage.toFixed(2));
 
       let diaryNutriValues = new Map<string, number>();
       diaryNutriValues.set('dailyCarbsPercentage', dailyCarbsPercentage);
