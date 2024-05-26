@@ -5,11 +5,12 @@ import { NgClass } from '@angular/common';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { FoodPageNavbarComponent } from '../food-page-navbar/food-page-navbar.component';
 
 @Component({
   selector: 'app-food-page',
   standalone: true,
-  imports: [SlickCarouselModule, NgClass],
+  imports: [SlickCarouselModule, NgClass, FoodPageNavbarComponent],
   templateUrl: './food-page.component.html',
   styleUrl: './food-page.component.sass'
 })
