@@ -14,6 +14,7 @@ export class Food {
       public offer: boolean,
       public suggestion: boolean,
       public image: string,
+      public listOfPossibleExtraIngredients: Ingredient[],
       public extraIngredients: Ingredient[],
       public tags: string[],
     ) {
@@ -76,4 +77,22 @@ export class Food {
       });
       return totalPrice;
     }
+
+    addExtraIngredient(ingredient: Ingredient): void {
+      this.extraIngredients.push(ingredient);
+      this.nutritionalValue = this.calculateNutritionalValue();
+      this.diaryNutriValues = this.calculateDiaryNutriValues();
+    }
+
+    // Remove an extra ingredient by Ingredient object
+    removeExtraIngredient(ingredient: Ingredient): void {
+      const index = this.extraIngredients.findIndex(extra => extra.id === ingredient.id);
+      if (index !== -1) {
+        this.extraIngredients.splice(index, 1);
+        this.nutritionalValue = this.calculateNutritionalValue();
+        this.diaryNutriValues = this.calculateDiaryNutriValues();
+      }
+    }
+
+    //TODO -- Add a property for extra ingredients that can be add
 }

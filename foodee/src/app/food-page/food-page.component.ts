@@ -27,7 +27,10 @@ export class FoodPageComponent {
   food : Food = this.dataService.getFoodById(this.IntId);
 
   ngOnInit(){
-   
+  }
+
+  ngAfterViewInit(){
+    this.addClickListeners();
   }
   
   slideConfig = {
@@ -36,6 +39,37 @@ export class FoodPageComponent {
     "arrows": false,
   };
 
-  
+
+  addClickListeners() {
+    setTimeout(() => {
+      let extraIngredientElements = document.querySelectorAll('.ingredient-slide');
+      extraIngredientElements.forEach((element) => {
+        element.addEventListener('click', () => {
+          element.classList.toggle('slide-active');
+        });
+      });
+    }, 0); // Usar setTimeout para garantir que os elementos estejam no DOM
+  }
+
+  manageActiveIngredients(ingredient : Ingredient){
+    this.removeOrAddIngredient(ingredient);
+  }
+
+  removeOrAddIngredient(ingredient : Ingredient){
+    if(this.food.extraIngredients.includes(ingredient)){
+      this.food.removeExtraIngredient(ingredient);
+      console.log('removing')
+    }
+    else{
+      this.food.addExtraIngredient(ingredient);
+      console.log('adding')
+    }
+  }  
+
+
+
+
+
+
 
 }

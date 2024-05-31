@@ -37,6 +37,7 @@ export class DataService {
       food.offer,
       food.suggestion,
       food.image,
+      [...food.listOfPossibleExtraIngredients], 
       [...food.extraIngredients], 
       [...food.tags] 
     );
