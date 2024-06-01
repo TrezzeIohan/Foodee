@@ -1,11 +1,12 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { Food } from '../models/food/food.model';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-food-page-navbar',
   standalone: true,
-  imports: [ NgIf ],
+  imports: [ NgIf, ],
   templateUrl: './food-page-navbar.component.html',
   styleUrls: ['./food-page-navbar.component.sass']  // Corrigido de styleUrl para styleUrls
 })
@@ -48,4 +49,12 @@ export class FoodPageNavbarComponent implements OnChanges {
   private updateTotalPrice() {
     this.totalPrice = parseFloat((this.baseFoodValue * this.numberOfItems).toFixed(2));
   }
+
+  /* PSEUDOCODE
+
+  ao clicar no botão
+    executar função de adicionar ao serviço
+    os elementos da página são zerados
+  
+  */ 
 }
