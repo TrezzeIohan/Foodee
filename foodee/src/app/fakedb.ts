@@ -34,7 +34,7 @@ const cheeseburger = new Food(
   'Mr. Cheezy',
   'Each Mr.Cheeze® includes a delectable Cheese Bacon Burger, featuring thick-cut applewood smoked bacon atop a juicy quarter-pound patty.',
   [cheese, tomato, dough], // Assuming dough as a bun here
-  8.99,
+  5.99,
   true,
   false,
   '../assets/imgs/hamburger.svg',

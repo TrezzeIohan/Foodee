@@ -16,16 +16,30 @@ export class CartService {
   addToCart(item: Food): void {
     this.cartItems.push(item);
     this.updateCart();
+    console.log(`Item ${item.name} added to cart`);
   }
 
   removeFromCart(item: Food): void {
-    this.cartItems = this.cartItems.filter(cartItem => cartItem.id !== item.id);
-    this.updateCart();
+    const index = this.cartItems.findIndex(cartItem => cartItem.id === item.id);
+    if (index > -1) {
+      this.cartItems.splice(index, 1);
+      this.updateCart();
+      console.log(`Item ${item.name} removed from cart`);
+    }
   }
 
   clearCart(): void {
     this.cartItems = [];
     this.updateCart();
+    console.log('Cart cleared');
+  }
+
+  getItemCount(): number {
+    return this.cartItems.length;
+  }
+
+  getTotalPrice(): number {
+    return this.cartItems.reduce((total, item) => total + item.price, 0);
   }
 
   private updateCart(): void {
