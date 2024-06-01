@@ -15,11 +15,21 @@ export class FoodPageNavbarComponent implements OnChanges {
   numberOfItems: number = 0;
   baseFoodValue: number = 0;
   totalPrice: number = 0;
+  private previousPrice: number = 0;
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['food'] && changes['food'].currentValue) {
       this.baseFoodValue = this.food.price;
       this.updateTotalPrice();
+      this.previousPrice = this.food.price;
+    }
+  }
+
+  ngDoCheck(): void {
+    if (this.food.price !== this.previousPrice) {
+      this.baseFoodValue = this.food.price;
+      this.updateTotalPrice();
+      this.previousPrice = this.food.price;
     }
   }
 

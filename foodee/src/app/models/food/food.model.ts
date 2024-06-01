@@ -93,6 +93,4 @@ export class Food {
         this.diaryNutriValues = this.calculateDiaryNutriValues();
       }
     }
-
-    //TODO -- Add a property for extra ingredients that can be add
 }
