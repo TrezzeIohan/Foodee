@@ -59,11 +59,9 @@ export class FoodPageComponent {
   removeOrAddIngredient(ingredient : Ingredient){
     if(this.food.extraIngredients.includes(ingredient)){
       this.food.removeExtraIngredient(ingredient);
-      console.log('removing')
     }
     else{
       this.food.addExtraIngredient(ingredient);
-      console.log('adding')
     }
   } 
 
