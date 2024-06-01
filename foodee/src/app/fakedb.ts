@@ -24,7 +24,7 @@ const pizzaMargherita = new Food(
   false,
   true,
   '../assets/imgs/pizza.svg',
-  [shrimp, mushroom, bellPepper, onions],
+  [shrimp, mushroom, bellPepper],
   [],
   ['Italian', 'Vegetarian']
 );
@@ -38,7 +38,7 @@ const cheeseburger = new Food(
   true,
   false,
   '../assets/imgs/hamburger.svg',
-  [cheddar, bacon, onions, tomato],
+  [cheddar, bacon, onions],
   [],
   ['Classic Taste', 'Bestseller']
 );

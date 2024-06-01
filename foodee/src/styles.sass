@@ -32,6 +32,11 @@ button, input[type="button"], input[type="reset"], input[type="submit"]
   /* Optional: Remove other vendor-specific styles */
   -webkit-tap-highlight-color: transparent
 
+p, h1, h2, h3, h4, h5, h6, span, div, a, li, td, th, label 
+      -webkit-user-select: none 
+      -moz-user-select: none
+      -ms-user-select: none
+      user-select: none
 
 // Classes de utilidade para tamanho de fonte
 .font-small
@@ -290,6 +295,9 @@ input
 
 #extra-ingredients-carousel .slick-list
   padding-top: 0px !important
+
+.ingredient-slide
+  border-radius: 10%
 
 .nutrition-value-number
   font-weight: 350

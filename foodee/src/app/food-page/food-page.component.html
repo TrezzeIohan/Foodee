@@ -35,21 +35,19 @@
             <h3>Add More Flavour <span><img src="../../assets/imgs/other/star-struck.svg" class="emoji" alt=""></span></h3>
         </div>
 
-        <ngx-slick-carousel class="carousel d-flex align-items-center px-0" id="extra-ingredients-carousel"
-                        #slickModal="slick-carousel" 
-                        [config]="slideConfig">
-                        @for (ingredient of food.listOfPossibleExtraIngredients; track ingredient.id;) {
-            <div ngxSlickItem (click)="manageActiveIngredients(ingredient)" class="d-flex flex-column align-items-center justify-content-between m-1 custom-shadow bg-color-ivory custom-shadow py-3 px-2 ingredient-slide">
+
+
+        <div class="col-12 d-flex flex-row mb-4 align-items-center justify-content-center">
+            <div *ngFor="let ingredient of food.listOfPossibleExtraIngredients, let i = index" (click)="manageActiveIngredients(ingredient)" class="col-4 d-flex flex-column justify-content-between m-1 custom-shadow bg-color-ivory custom-shadow py-3 px-2 ingredient-slide">
                 <img src="{{ ingredient.image }}" alt="" class="img-fluid">    
                 <div class="d-flex justify-content-center flex-column">
-                    <p class="m-0 dark-text sm-text fw-normal">{{ingredient.name}}</p>
-                    <p class="m-0 dark-text sm-text fw-normal">+${{ingredient.price}}</p>
+                    <p class="m-0 dark-text sm-text fw-normal text-center">{{ingredient.name}}</p>
+                    <p class="m-0 dark-text sm-text fw-normal text-center">+${{ingredient.price}}</p>
                 </div>
-                
-                            
-            </div> 
-        }
-    </ngx-slick-carousel>
+            </div>
+
+
+        </div>
     </div>
 </div>
 

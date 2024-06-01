@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Food } from '../models/food/food.model';
 import { Ingredient } from '../models/food/ingredient/ingredient.model';
-import { NgClass } from '@angular/common';
+import { NgClass, NgFor } from '@angular/common';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { FoodPageNavbarComponent } from '../food-page-navbar/food-page-navbar.component';
+import { HammerModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-food-page',
   standalone: true,
-  imports: [SlickCarouselModule, NgClass, FoodPageNavbarComponent],
+  imports: [SlickCarouselModule, NgClass, NgFor, FoodPageNavbarComponent, HammerModule],
   templateUrl: './food-page.component.html',
   styleUrl: './food-page.component.sass'
 })
@@ -64,7 +65,9 @@ export class FoodPageComponent {
       this.food.addExtraIngredient(ingredient);
       console.log('adding')
     }
-  }  
+  } 
+
+
 
 
 
