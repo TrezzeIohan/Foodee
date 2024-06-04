@@ -2,6 +2,8 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { Food } from '../models/food/food.model';
 import { CartService } from '../cart.service';
+import { CartItemGroup } from '../models/cart/cart-item-group.model';
+
 
 @Component({
   selector: 'app-food-page-navbar',
@@ -16,7 +18,13 @@ export class FoodPageNavbarComponent implements OnChanges {
   numberOfItems: number = 0;
   baseFoodValue: number = 0;
   totalPrice: number = 0;
+  cartService = new CartService;
+
   private previousPrice: number = 0;
+
+  ngOnInit(){
+
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['food'] && changes['food'].currentValue) {
@@ -50,11 +58,10 @@ export class FoodPageNavbarComponent implements OnChanges {
     this.totalPrice = parseFloat((this.baseFoodValue * this.numberOfItems).toFixed(2));
   }
 
-  /* PSEUDOCODE
+  sentToCartAndResetNumberOfItems(){
+    let newCartItemGroup: CartItemGroup = new CartItemGroup(this.food, this.numberOfItems)
+    this.cartService.addCartItemGroupToCart(newCartItemGroup);
+    this.numberOfItems = 0;
+  }
 
-  ao clicar no botão
-    executar função de adicionar ao serviço
-    os elementos da página são zerados
-  
-  */ 
 }

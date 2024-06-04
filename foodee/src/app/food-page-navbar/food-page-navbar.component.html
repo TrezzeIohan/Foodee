@@ -44,7 +44,7 @@
             </div>
 
             <!-- Add to Cart -->
-            <button id="add-to-cart-buttom" class="d-flex flex-column align-items-center justify-content-center bg-color-light-coral">
+            <button id="add-to-cart-buttom" class="d-flex flex-column align-items-center justify-content-center bg-color-light-coral" (click)="sentToCartAndResetNumberOfItems()">
                 <p class="text-white m-0">Add to Cart</p>
                 <p id="add-to-cart-buttom-text" class="m-0 text-white">${{totalPrice}}</p>
             </button>

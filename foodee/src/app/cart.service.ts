@@ -18,18 +18,16 @@ export class CartService {
 
     this.cartItemGroupArray.push(cartItemGroup);
     this.updateCart();
-    console.log(`Item ${cartItemGroup.food.name} added to the cart`);
+    console.log(`${cartItemGroup.quantity} Item(s) ${cartItemGroup.food.name} added to the cart`);
+    console.log(this.cartItemGroupArray);
   }
 
-  removeCartItemGroupFromCart(cartItemGroup: CartItemGroup): void {
-    const index = this.cartItemGroupArray.findIndex(item => item.food.id === cartItemGroup.id);
+  removeCartItemGroupFromCart(cartItemGroupId: number): void {
+    const index = this.cartItemGroupArray.findIndex(item => item.id === cartItemGroupId);
     if (index > -1) {
-      this.cartItemGroupArray[index].quantity -= 1;
-      if (this.cartItemGroupArray[index].quantity === 0) {
-        this.cartItemGroupArray.splice(index, 1);
-      }
+      this.cartItemGroupArray.splice(index, 1);
       this.updateCart();
-      console.log(`Item ${cartItemGroup.food.name} removed from cart`);
+      console.log(`Item(s) removed from cart`);
     }
   }
 
