@@ -57,19 +57,19 @@
             <h3>Nutrition Facts</h3> <h3>{{food.nutritionalValue.calories}}Cal</h3>
         </div>
 
-        <div id="nutrition-facts" class="d-flex flex-row justify-content-between">
+        <div id="nutrition-facts" class="d-flex flex-row justify-content-between col-12">
 
-            <div class="d-flex flex-column align-items-center">
+            <div class="d-flex flex-column align-items-center col-3">
                 <p class="p-0 m-0 nutrition-value-number">{{food.nutritionalValue.fat}} g</p>
                 <p class="nutrition-value-text">Total Fat ({{food.diaryNutriValues.get('dailyFatPercentage')}}% DV)</p>
             </div>
 
-            <div class="d-flex flex-column align-items-center">
+            <div class="d-flex flex-column align-items-center col-3">
                 <p class="p-0 m-0 nutrition-value-number">{{food.nutritionalValue.carbs}} g</p>
                 <p class="nutrition-value-text">Total Carbs ({{food.diaryNutriValues.get('dailyCarbsPercentage')}}% DV)</p>
             </div>
 
-            <div class="d-flex flex-column align-items-center">
+            <div class="d-flex flex-column align-items-center col-3">
                 <p class="p-0 m-0 nutrition-value-number">{{food.nutritionalValue.protein}} g</p>
                 <p class="nutrition-value-text">Protein</p>
             </div>
