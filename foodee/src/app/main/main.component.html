@@ -1,5 +1,5 @@
 <!-- Header Content -->
-<div class="container bg-color-true-white default-padding pb-0">
+<div class="container bg-color-true-white default-padding pb-0 p-md-0 pt-md-3">
     <div class="row p-0">
         <header class="d-flex flex-row padding-profile-card d-flex align-items-center justify-content-between custom-shadow bg-color-ivory ">
             <img src="../../assets/profile-pictures/kid goku.jpg" alt="Profile Picture" class="img-fluid profile-picture rounded-circle">
@@ -8,7 +8,7 @@
     </div>
 
     <div class="row d-flex justify-content-between align-items-center">
-        <div class="col-10 d-flex align-items-center justify-content-center h-100 border-0 search-div bg-color-white-smoke p-1">
+        <div class="col-10 col-md-11 d-flex align-items-center justify-content-center h-100 border-0 search-div bg-color-white-smoke p-1">
             <div class="p-0 m-0 d-flex align-items-center justify-content-center search-icon-div">
                 <img src="../../assets/icons/Search.svg" alt="search" class="border-0">
             </div>        
@@ -24,10 +24,10 @@
 </div>
 
 <!-- Slides -->
-<div class="container bg-color-true-white">
+<div class="container bg-color-true-white p-md-0">
     <div class="row">
         <div class="col-12 p-0">
-            <h1 class="main-text default-padding-horizontal-only mb-0" id="todays-menu">Today's Menu</h1>
+            <h1 class="main-text default-padding-horizontal-only mb-0 p-md-0" id="todays-menu">Today's Menu</h1>
 
             <ngx-slick-carousel class="carousel d-flex align-items-center" 
                         #slickModal="slick-carousel" 
@@ -68,33 +68,35 @@
 </div>
 
 <!-- Best Offers -->
-<div class="container bg-color-true-white last-session">
+<div class="container bg-color-true-white last-session p-md-0">
     <div class="row">
-        <div class="col-12 p-3 pt-0 d-flex flex-column align-items-start">
+        <div class="col-12 p-3 p-md-0 pt-0 d-flex flex-column align-items-start">
             <div>            
-                <h1 class="main-text default-padding-horizontal-only mb-5 p-0" id="todays-menu">Best Offers <span><img src="../../assets/imgs/other/two-hearts.svg" alt="" class="img-fluid emoji"></span></h1>
+                <h1 class="main-text default-padding-horizontal-only mb-5 p-md-0" id="todays-menu">Best Offers <span><img src="../../assets/imgs/other/two-hearts.svg" alt="" class="img-fluid emoji"></span></h1>
             </div>
 
-            <div class="d-flex flex-row custom-card custom-shadow bg-white justify-content-center py-3 mb-3 col-12">
 
-                <img src="../../assets/imgs/float-burger.svg" alt="" class="card-image img-fluid me-3">
+            <div class="d-flex flex-row custom-card custom-shadow bg-white justify-content-center align-items-md-center py-3 mb-3 col-12">
+
+                <img src="../../assets/imgs/hotdog.svg" alt="" class="card-image img-fluid me-3">
                 
                 <div class="col-7 d-flex flex-column align-items-start">
-                    <h3 class="mb-0">Cheeseburger </h3>
-                    <p class="mb-0">A classic never gets old</p>
+                    <h3 class="mb-0 best-offers-card-title">Frenchdog</h3>
+                    <p class="mb-0 best-offers-card-text">Tasty&Spicy <span><img src="../../assets/imgs/other/hot-pepper.svg" alt="" class="sm-emoji"></span><span><img src="../../assets/imgs/other/hot-pepper.svg" alt="" class="sm-emoji"></span><span><img src="../../assets/imgs/other/hot-pepper.svg" alt="" class="sm-emoji"></span></p>
                 </div>
             </div>
 
-            <div class="d-flex flex-row custom-card custom-shadow bg-white justify-content-center py-3 mb-3 col-12">
 
-                    <img src="../../assets/imgs/hotdog.svg" alt="" class="card-image img-fluid me-3">
+                <div class="d-flex flex-row custom-card custom-shadow bg-white justify-content-center align-items-md-center py-3 py-md-4 mb-3 col-12">
+
+                    <img src="../../assets/imgs/float-burger.svg" alt="" class="card-image img-fluid me-3">
                     
                     <div class="col-7 d-flex flex-column align-items-start">
-                        <h3 class="mb-0">Frenchdog</h3>
-                        <p class="mb-0">Tasty&Spicy <span><img src="../../assets/imgs/other/hot-pepper.svg" alt="" class="sm-emoji"></span><span><img src="../../assets/imgs/other/hot-pepper.svg" alt="" class="sm-emoji"></span><span><img src="../../assets/imgs/other/hot-pepper.svg" alt="" class="sm-emoji"></span></p>
+                        <h3 class="mb-0 best-offers-card-title">Mr. Cheezy</h3>
+                        <p class="mb-0 best-offers-card-text">
+                        Unbeatable sensation</p>
                     </div>
-            </div>
-
+                </div>
         </div>
     </div>
 </div>
