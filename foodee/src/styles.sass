@@ -7,6 +7,7 @@ $medium-font-size: 16px
 $large-font-size: 20px
 
 
+
 /* Reseting buttom appearances */
 button, input[type="button"], input[type="reset"], input[type="submit"] 
   /* Remove default appearance */
@@ -39,6 +40,14 @@ p, h1, h2, h3, h4, h5, h6, span, div, a, li, td, th, label
       -moz-user-select: none
       -ms-user-select: none
       user-select: none
+
+svg:focus 
+  outline: none
+
+/* Para aplicar a todos os elementos DIV */
+div:focus 
+  outline: none
+
 
 // Classes de utilidade para tamanho de fonte
 .font-small
@@ -257,6 +266,17 @@ input
 .active .secondary-path-shopping
   fill: #F28482
 
+// CSS for the circle with number of items
+#cart-items-number
+  position: absolute
+  transform: translate3d(190%, 10%, 0)
+  border-radius: 50%
+  width: 1.0rem
+  height: 1.0rem
+
+
+#cart-items-number-text
+  font-size: 0.5rem
   
 /* Food page sections */
 #food-page-top-section
@@ -399,3 +419,25 @@ input
 
 #progress::-webkit-progress-bar 
     background-color: var(--prm-gray)
+
+
+
+// Regras para telas maiores que mobile 
+@media (min-width: 768px) 
+  .slick-slide.custom-shadow
+    box-shadow: none
+
+  .card-image
+    height: 200px
+
+  .best-offers-card-title
+    font-size: 3.4rem
+
+  .best-offers-card-text
+    font-size: 1.7rem
+
+  .small-slide
+    overflow: hidden
+    height: 228px !important
+    transform: translateY(-20px)
+
