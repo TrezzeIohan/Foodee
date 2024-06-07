@@ -1,29 +1,39 @@
 import { Component } from '@angular/core';
+import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatButtonModule} from '@angular/material/button';
+import { CustomStepperComponent } from '../custom-stepper/custom-stepper.component';
+import { NgTemplateOutlet } from '@angular/common';
+import { CdkStepperModule } from '@angular/cdk/stepper';
 
 @Component({
   selector: 'app-my-cart',
   standalone: true,
-  imports: [],
+  imports: [ 
+    MatButtonModule,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    CustomStepperComponent,
+    NgTemplateOutlet,
+    CdkStepperModule
+],
   templateUrl: './my-cart.component.html',
   styleUrl: './my-cart.component.sass'
 })
 export class MyCartComponent {
-const stepButtons = document.querySelectorAll('.step-button');
-const progress = document.querySelector('#progress');
-
-Array.from(stepButtons).forEach((button,index) => {
-    button.addEventListener('click', () => {
-        this.progress.setAttribute('value', index * 100 /(this.stepButtons.length - 1) );//there are 3 buttons. 2 spaces.
-
-        this.stepButtons.forEach((item, secindex)=>{
-            if(index > secindex){
-                item.classList.add('done');
-            }
-            if(index < secindex){
-                item.classList.remove('done');
-            }
-        })
-    })
-})
+    firstFormGroup = this._formBuilder.group({
+        firstCtrl: ['', Validators.required],
+      });
+      secondFormGroup = this._formBuilder.group({
+        secondCtrl: ['', Validators.required],
+      });
+      isLinear = false;
+    
+      constructor(private _formBuilder: FormBuilder) {}
 
 }
