@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './bootstrap-custom-stepper.component.sass'
 })
 export class BootstrapCustomStepperComponent {
+value:number = 50;
+  ngOnInit(){
+    const progress = document.getElementById('progress') as HTMLProgressElement ;
+      progress.value = this.value;
+  }
 
 }

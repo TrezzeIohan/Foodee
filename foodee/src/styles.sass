@@ -244,7 +244,10 @@ input
   stroke: #3D405B  
 
 .inactive .secondary-path 
-  fill: #3D405B  
+  fill: #3D405B
+
+.nav-bar-icon
+  cursor: pointer
 
 // CSS styles specific for the bag icon styles
 .strap
@@ -403,23 +406,6 @@ input
     z-index: 10
     text-align: center
 
-#progress 
-  -webkit-appearance:none
-    position: absolute
-    width: 95%
-    z-index: 5
-    height: 10px
-    margin-left: 18px
-    margin-bottom: 18px
-
-/* to customize progress bar */
-#progress::-webkit-progress-value 
-    background-color: var(--prm-color)
-    transition: .5s ease
-
-#progress::-webkit-progress-bar 
-    background-color: var(--prm-gray)
-
 
 
 // Regras para telas maiores que mobile 
@@ -438,6 +424,9 @@ input
 
   .small-slide
     overflow: hidden
-    height: 228px !important
+    height: 280px !important
     transform: translateY(-20px)
+  
+  .small-slide-img
+    height: 90%
 
