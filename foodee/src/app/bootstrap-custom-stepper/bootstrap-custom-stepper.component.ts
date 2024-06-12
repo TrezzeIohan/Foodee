@@ -47,5 +47,40 @@ export class BootstrapCustomStepperComponent implements AfterViewInit {
         collapseTarget.classList.add('show');
       }
     }
+
+    this.updateLineClasses(stepButtons);
+  }
+
+  private updateLineClasses(stepButtons: NodeListOf<HTMLElement>): void {
+    const progress1 = this.el.nativeElement.querySelector('#progress1');
+    const progress2 = this.el.nativeElement.querySelector('#progress2');
+
+    const secondButtonExpanded = stepButtons[1].getAttribute('aria-expanded') === 'true';
+    const thirdButtonExpanded = stepButtons[2].getAttribute('aria-expanded') === 'true';
+    const firstButtonExpanded = stepButtons[0].getAttribute('aria-expanded') === 'true';
+
+    if (secondButtonExpanded) {
+      this.renderer.removeClass(progress1, 'bg-color-tea-rose');
+      this.renderer.addClass(progress1, 'bg-color-light-coral');
+    } else {
+      this.renderer.removeClass(progress1, 'bg-color-light-coral');
+      this.renderer.addClass(progress1, 'bg-color-tea-rose');
+      this.renderer.addClass(progress2, 'bg-color-tea-rose');
+    }
+
+    if (thirdButtonExpanded) {
+      this.renderer.removeClass(progress1, 'bg-color-tea-rose');
+      this.renderer.removeClass(progress2, 'bg-color-tea-rose');
+      this.renderer.addClass(progress1, 'bg-color-light-coral');
+      this.renderer.addClass(progress2, 'bg-color-light-coral');
+    } else {
+      this.renderer.removeClass(progress2, 'bg-color-light-coral');
+      this.renderer.addClass(progress2, 'bg-color-tea-rose');
+    }
+
+    if (firstButtonExpanded) {
+      this.renderer.removeClass(progress1, 'bg-color-light-coral');
+      this.renderer.removeClass(progress2, 'bg-color-light-coral');
+    }
   }
 }
