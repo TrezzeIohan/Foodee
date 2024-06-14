@@ -17,6 +17,8 @@ export class BootstrapCustomStepperComponent implements AfterViewInit {
     this.checkStepButtons();
 
     const stepButtons = this.el.nativeElement.querySelectorAll('.step-button');
+    const stepTitles = this.el.nativeElement.querySelectorAll('.step-title');
+
     stepButtons.forEach((button: HTMLElement) => {
       this.renderer.listen(button, 'click', () => {
         setTimeout(() => this.checkStepButtons(), 300); // Adjust timeout to match your collapse animation duration
@@ -52,35 +54,64 @@ export class BootstrapCustomStepperComponent implements AfterViewInit {
   }
 
   private updateLineClasses(stepButtons: NodeListOf<HTMLElement>): void {
+    const stepTexts = this.el.nativeElement.querySelectorAll('.steps-text');
+
     const progress1 = this.el.nativeElement.querySelector('#progress1');
     const progress2 = this.el.nativeElement.querySelector('#progress2');
 
+    const firstButtonExpanded = stepButtons[0].getAttribute('aria-expanded') === 'true';
     const secondButtonExpanded = stepButtons[1].getAttribute('aria-expanded') === 'true';
     const thirdButtonExpanded = stepButtons[2].getAttribute('aria-expanded') === 'true';
-    const firstButtonExpanded = stepButtons[0].getAttribute('aria-expanded') === 'true';
+
+
+
+    if (firstButtonExpanded) {
+      this.renderer.removeClass(stepButtons[1], 'bg-color-light-coral-important');
+      this.renderer.removeClass(stepButtons[2], 'bg-color-light-coral-important');
+
+      this.renderer.removeClass(progress1, 'bg-color-light-coral');
+      this.renderer.removeClass(progress2, 'bg-color-light-coral');
+    }
 
     if (secondButtonExpanded) {
       this.renderer.removeClass(progress1, 'bg-color-tea-rose');
       this.renderer.addClass(progress1, 'bg-color-light-coral');
+      this.renderer.addClass(stepButtons[1], 'bg-color-light-coral-important')
+
+      this.renderer.removeClass(stepTexts[1], 'steps-text-light')
+
+      
     } else {
       this.renderer.removeClass(progress1, 'bg-color-light-coral');
       this.renderer.addClass(progress1, 'bg-color-tea-rose');
       this.renderer.addClass(progress2, 'bg-color-tea-rose');
+
+      this.renderer.addClass(stepTexts[1], 'steps-text-light')
+
     }
 
     if (thirdButtonExpanded) {
+      this.renderer.addClass(stepButtons[1], 'bg-color-light-coral-important');
+      this.renderer.addClass(stepButtons[2], 'bg-color-light-coral-important');
+
       this.renderer.removeClass(progress1, 'bg-color-tea-rose');
       this.renderer.removeClass(progress2, 'bg-color-tea-rose');
       this.renderer.addClass(progress1, 'bg-color-light-coral');
       this.renderer.addClass(progress2, 'bg-color-light-coral');
+
+      this.renderer.removeClass(stepTexts[1], 'steps-text-light')
+      this.renderer.removeClass(stepTexts[2], 'steps-text-light')
+
+
     } else {
       this.renderer.removeClass(progress2, 'bg-color-light-coral');
       this.renderer.addClass(progress2, 'bg-color-tea-rose');
+
+      this.renderer.removeClass(stepButtons[2], 'bg-color-light-coral-important')
+
+      this.renderer.addClass(stepTexts[2], 'steps-text-light')
     }
 
-    if (firstButtonExpanded) {
-      this.renderer.removeClass(progress1, 'bg-color-light-coral');
-      this.renderer.removeClass(progress2, 'bg-color-light-coral');
-    }
+
   }
 }
