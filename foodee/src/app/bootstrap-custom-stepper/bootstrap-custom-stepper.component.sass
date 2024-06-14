@@ -14,13 +14,14 @@
     color: #B3B5CC
 
 .step-button
-    width: 50px
-    height: 50px
+    width: 40px
+    height: 40px
     border-radius: 50%
     border: none
     background-color: #FBDCDB
     color: #fff
     transition: .4s
+    font-size: 0.7rem
 
 
 
@@ -37,7 +38,7 @@
 
 #progress1
     position: absolute
-    width: 50%
+    width: 42%
     z-index: 5
     height: 1px
     margin-left: 18px
@@ -46,20 +47,32 @@
 
 #progress2
     position: absolute
-    width: 47%
+    width: 42%
     z-index: 5
     height: 1px
     margin-left: 18px
     margin-bottom: 18px
     transform: translate3d(98%, 2000%, 0)
 
+@media (min-width: 750px)
+    #progress1
+        width:45%
+        transform: translate3d(0, 2000%, 0)
+    #progress2
+        width:45%
+        transform: translate3d(100%, 2000%, 0)
+
 @media (min-width: 1200px)
     #progress2
+        width:47%
         transform: translate3d(100%, 2000%, 0)
 
 @media (min-width: 1400px)
+    #progress1
+        width:47%
+        transform: translate3d(0, 2000%, 0)
     #progress2
-        transform: translate3d(105%, 2000%, 0)
+        transform: translate3d(100%, 2000%, 0)
 
 .no-interaction 
   pointer-events: none

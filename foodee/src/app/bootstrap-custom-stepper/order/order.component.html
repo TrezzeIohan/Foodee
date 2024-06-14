@@ -1,0 +1,16 @@
+<div class="container p-0">
+    <div class="d-flex justify-content-between">
+        <h3 class="dark-text mb-0">Order</h3>
+        <button class="color-light-coral" (click)="cartService.clearCart()">Clear all</button>
+    </div>
+
+    <div class="order-card">
+        <img src="{{cartService.cartItemGroupArray[0].food.image}}" alt="" class="img-fluid order-image">
+        <div class="title&Price">
+            <p class="order-title dark-text">{{cartService.cartItemGroupArray[0].food.name}}</p>
+            <p class="order-price dark-text">{{cartService.cartItemGroupArray[0].food.price}}</p>
+        </div>
+    </div>
+</div>
+
+          

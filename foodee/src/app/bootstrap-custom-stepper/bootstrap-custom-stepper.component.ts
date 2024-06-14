@@ -1,9 +1,10 @@
 import { Component, AfterViewInit, Renderer2, ElementRef } from '@angular/core';
+import { OrderComponent } from './order/order.component';
 
 @Component({
   selector: 'app-bootstrap-custom-stepper',
   standalone: true,
-  imports: [],
+  imports: [OrderComponent],
   templateUrl: './bootstrap-custom-stepper.component.html',
   styleUrls: ['./bootstrap-custom-stepper.component.sass']
 })
@@ -50,20 +51,17 @@ export class BootstrapCustomStepperComponent implements AfterViewInit {
       }
     }
 
-    this.updateLineClasses(stepButtons);
+    this.updateStepperClasses();
   }
 
-  private updateLineClasses(stepButtons: NodeListOf<HTMLElement>): void {
+  private updateStepperClasses(): void {
+    const stepButtons = this.el.nativeElement.querySelectorAll('.step-button');
     const stepTexts = this.el.nativeElement.querySelectorAll('.steps-text');
-
     const progress1 = this.el.nativeElement.querySelector('#progress1');
     const progress2 = this.el.nativeElement.querySelector('#progress2');
-
     const firstButtonExpanded = stepButtons[0].getAttribute('aria-expanded') === 'true';
     const secondButtonExpanded = stepButtons[1].getAttribute('aria-expanded') === 'true';
     const thirdButtonExpanded = stepButtons[2].getAttribute('aria-expanded') === 'true';
-
-
 
     if (firstButtonExpanded) {
       this.renderer.removeClass(stepButtons[1], 'bg-color-light-coral-important');
@@ -76,6 +74,7 @@ export class BootstrapCustomStepperComponent implements AfterViewInit {
     if (secondButtonExpanded) {
       this.renderer.removeClass(progress1, 'bg-color-tea-rose');
       this.renderer.addClass(progress1, 'bg-color-light-coral');
+
       this.renderer.addClass(stepButtons[1], 'bg-color-light-coral-important')
 
       this.renderer.removeClass(stepTexts[1], 'steps-text-light')
@@ -114,4 +113,5 @@ export class BootstrapCustomStepperComponent implements AfterViewInit {
 
 
   }
+
 }

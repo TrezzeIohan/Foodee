@@ -7,7 +7,7 @@ import { CartItemGroup } from './models/cart/cart-item-group.model';
   providedIn: 'root'
 })
 export class CartService {
-  private cartItemGroupArray: CartItemGroup[] = this.getcartItemGroupsFromLocalStorage();
+  cartItemGroupArray: CartItemGroup[] = this.getcartItemGroupsFromLocalStorage();
   private cartSubject: BehaviorSubject<CartItemGroup[]> = new BehaviorSubject(this.cartItemGroupArray);
 
   cart$ = this.cartSubject.asObservable();
