@@ -10,7 +10,7 @@ export class Food {
       public name: string,
       public description: string,
       public ingredients: Ingredient[],
-      private basePrice: number,
+      public basePrice: number,
       public offer: boolean,
       public suggestion: boolean,
       public image: string,
@@ -75,6 +75,17 @@ export class Food {
       this.extraIngredients.forEach(ingredient => {
         totalPrice += ingredient.price;
       });
+      return totalPrice;
+    }
+
+    getTotalPrice(): number {
+      let counter = 1;
+      let totalPrice = this.basePrice;
+      this.extraIngredients.forEach(ingredient => {
+        totalPrice += ingredient.price;
+      });
+      console.log(totalPrice + " foo" + counter)
+      counter++;
       return totalPrice;
     }
 

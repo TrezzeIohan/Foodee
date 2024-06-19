@@ -55,7 +55,33 @@ export class CartService {
   }
 
   private getcartItemGroupsFromLocalStorage(): CartItemGroup[] {
-    const cartItemGroupArray = localStorage.getItem('cartItemGroupArray');
-    return cartItemGroupArray ? JSON.parse(cartItemGroupArray) : [];
+    // Recupere os dados do localStorage
+const cartItemGroupArray = JSON.parse(localStorage.getItem('cartItemGroupArray') || '[]');
+
+// Crie instâncias de CartItemGroup a partir dos objetos convertidos
+const cartItemsList = cartItemGroupArray.map((item: any) => {
+  return new CartItemGroup(
+    new Food(
+      item.food.id,
+      item.food.name,
+      item.food.description,
+      item.food.ingredients,
+      item.food.basePrice,
+      item.food.offer,
+      item.food.suggestion,
+      item.food.image,
+      item.food.listOfPossibleExtraIngredients,
+      item.food.extraIngredients,
+      item.food.tags
+    ),
+    item.quantity
+  );
+});
+// Agora cartItemsList contém instâncias da classe CartItemGroup
+console.log(cartItemsList);
+
+return cartItemsList;
+
+
   }
 }
