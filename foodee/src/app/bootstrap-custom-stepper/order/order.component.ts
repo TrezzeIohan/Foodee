@@ -36,6 +36,9 @@ increaseOrderQuantityFromItemWithIndex(i:number){
   this.cartService.updateCart();
 }
 
-
+clearComponentCartAndLocalCart(){
+  this.cartService.clearCart();
+  this.cartItemsList = [];
+}
 
 }
