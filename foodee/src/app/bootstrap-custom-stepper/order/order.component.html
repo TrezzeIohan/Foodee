@@ -1,15 +1,59 @@
 <div class="container p-0">
     <div class="d-flex justify-content-between">
-        <h3 class="dark-text mb-0">Order</h3>
+        <h3 class="dark-text">Order</h3>
         <button class="color-light-coral" (click)="cartService.clearCart()">Clear all</button>
     </div>
 
-    <div class="order-card">
-        <img src="{{cartService.cartItemGroupArray[0].food.image}}" alt="" class="img-fluid order-image">
-        <div class="title&Price">
-            <p class="order-title dark-text">{{cartService.cartItemGroupArray[0].food.name}}</p>
-            <p class="order-price dark-text">{{cartService.cartItemGroupArray[0].food.price}}</p>
+    <div class="order-card px-4 py-3 mb-3 col-12 d-flex flex-row align-items-center justify-content-between pink-shadow" *ngFor="let cartItem of cartItemsList; index as i">
+        <div class="d-flex col-7">
+            <img src="{{cartItem.food.image}}" alt="" class="img-fluid order-image me-3">
+            <div class="title&Price" class="d-flex flex-column justify-content-center">
+                <p class="order-title dark-text mb-0 order-card-title">{{cartItem.food.name}}</p>
+                <p class="order-price mb-0 color-light-coral">${{cartItem.food.price.toFixed(2)}}</p>    
+            </div>
         </div>
+
+
+        <div class="orderQuantity d-flex col-3 justify-content-between align-items-center">            
+            <div class="d-flex justify-content-end">
+                    <button id="minus-buttom" (click)="reduceOrderQuantityFromItemWithIndex(i)" class="" >
+                        <svg width="25" height="25" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1_187)">
+                            <circle cx="12.25" cy="12" r="12" fill="#F7EDE2"/>
+                            <path d="M7.25 12H17.25" stroke="#F28482" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1_187">
+                            <rect width="24" height="24" fill="white" transform="translate(0.25)"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </button>
+            </div>
+
+            <div class="d-flex justify-content-center"><p class="order-price mb-0 dark-text">{{cartItem.quantity}}</p></div>
+
+                <div class="d-flex justify-content-start">
+                        <button id="plus-buttom" (click)="increaseOrderQuantityFromItemWithIndex(i)">
+                            <svg width="25" height="25" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1_189)">
+                                <circle cx="12.25" cy="12" r="12" fill="#F28482"/>
+                                <path d="M12.25 7V17M7.25 12H17.25" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_1_189">
+                                <rect width="24" height="24" fill="white" transform="translate(0.25)"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                </div>
+        </div>
+    </div>
+
+    <div *ngIf="cartItemsList.length == 0" class="p-5">
+        <img src="./../../../assets/imgs/other/sadEmojiGirlBook.svg" alt="">
+        <p class="dark-text mb-0 oops-text">Oops! You haven't chosen anything yet.</p>
     </div>
 </div>
 

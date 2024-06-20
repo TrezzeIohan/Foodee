@@ -45,7 +45,7 @@ export class CartService {
     return this.cartItemGroupArray.reduce((total, item) => total + (item.food.price * item.quantity), 0);
   }
 
-  private updateCart(): void {
+   updateCart(): void {
     this.cartSubject.next(this.cartItemGroupArray);
     this.savecartItemGroupsToLocalStorage();
   }
