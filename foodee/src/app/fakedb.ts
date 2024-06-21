@@ -13,12 +13,12 @@ const pepperoni = new Ingredient('7', 'Pepperoni', 2.5, new Nutrition(150, 1, 13
 const mushroom = new Ingredient('8', 'Mushroom', 1.0, new Nutrition(15, 2, 0.1, 1), './assets/imgs/mushroom.svg');
 const bellPepper = new Ingredient('9', 'Bell Pepper', 1.0, new Nutrition(0,0.25, 0.0, 0), './assets/imgs/bell-pepper.svg');
 const shrimp = new Ingredient('10', 'Shrimp', 4.0, new Nutrition(10,2.25, 3.0, 8.0,), './assets/imgs/shrimp.svg');
-const milk = new Ingredient('1', 'Milk', 0.5, new Nutrition(42, 5, 1, 3), './assets/imgs/milk.svg');
-const sugar = new Ingredient('2', 'Sugar', 0.1, new Nutrition(387, 100, 0, 0), './assets/imgs/sugar.svg');
-const coffee = new Ingredient('3', 'Coffee', 0.3, new Nutrition(2, 0, 0, 0), './assets/imgs/coffee.svg');
-const potato = new Ingredient('4', 'Potato', 0.2, new Nutrition(77, 17, 0.1, 2), './assets/imgs/potato.svg');
-const strawberry = new Ingredient('5', 'Strawberry', 0.5, new Nutrition(32, 8, 0.3, 1), './assets/imgs/strawberry.svg');
-const cream = new Ingredient('6', 'Cream', 0.8, new Nutrition(50, 0.6, 5.5, 0.3), './assets/imgs/cream.svg');
+const milk = new Ingredient('11', 'Milk', 0.5, new Nutrition(42, 5, 1, 3), './assets/imgs/milk.svg');
+const sugar = new Ingredient('12', 'Sugar', 0.1, new Nutrition(387, 100, 0, 0), './assets/imgs/sugar.svg');
+const coffee = new Ingredient('13', 'Coffee', 0.3, new Nutrition(2, 0, 0, 0), './assets/imgs/coffee.svg');
+const potato = new Ingredient('14', 'Potato', 0.2, new Nutrition(77, 17, 0.1, 2), './assets/imgs/potato.svg');
+const strawberry = new Ingredient('15', 'Strawberry', 0.5, new Nutrition(32, 8, 0.3, 1), './assets/imgs/strawberry.svg');
+const cream = new Ingredient('16', 'Cream', 0.8, new Nutrition(50, 0.6, 5.5, 0.3), './assets/imgs/cream.svg');
 
 // Comidas
 const pizzaMargherita = new Food(
