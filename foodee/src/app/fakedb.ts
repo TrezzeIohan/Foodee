@@ -57,7 +57,7 @@ const iceCream = new Food(
   3.50,
   false,
   false,
-  './assets/imgs/ice-cream.svg',
+  '../assets/imgs/icecream.svg',
   [],
   [],
   ['Classic Taste', 'Delicious']
@@ -71,7 +71,7 @@ const frenchFries = new Food(
   2.00,
   false,
   false,
-  './assets/imgs/french-fries.svg',
+  '../assets/imgs/french-fries.svg',
   [],
   [],
   ['Golden Color', 'Crunchy']
@@ -85,7 +85,7 @@ const espresso = new Food(
   2.50,
   false,
   false,
-  './assets/imgs/espresso.svg',
+  '../assets/imgs/espresso.svg',
   [],
   [],
   ['Steamy', 'Handmade']
@@ -99,7 +99,7 @@ const soda = new Food(
   1.50,
   false,
   false,
-  './assets/imgs/soda.svg',
+  '../assets/imgs/soda-can.svg',
   [],
   [],
   ['Freezing Cold', 'Unique Flavor']
@@ -113,7 +113,7 @@ const coke = new Food(
   1.50,
   false,
   false,
-  './assets/imgs/coke.svg',
+  '../assets/imgs/coke.svg',
   [],
   [],
   ['Classic Taste', 'Freezing Cold']
@@ -127,7 +127,7 @@ const strawberryIceCreamCone = new Food(
   4.00,
   false,
   false,
-  './assets/imgs/strawberry-ice-cream-cone.svg',
+  '../assets/imgs/ice-cream-cone.svg',
   [],
   [],
   ['Delicious', 'Flavorful']
