@@ -4,6 +4,7 @@ import { CartItemGroup } from '../../models/cart/cart-item-group.model';
 import { cloneDeep } from 'lodash';
 import { Food } from '../../models/food/food.model';
 import { NgFor, NgIf } from '@angular/common';
+import { DataService } from '../../data.service';
 
 
 @Component({
@@ -14,11 +15,16 @@ import { NgFor, NgIf } from '@angular/common';
   styleUrl: './order.component.sass'
 })
 export class OrderComponent {
+
 cartService = new CartService;
+foodDbService = new DataService;
+foodDbList: Food[] = this.foodDbService.getFoodList();
 cartItemsList: CartItemGroup[] = this.cartService.cartItemGroupArray;
+suggestions: CartItemGroup[] = [];
+suggestionsList: Food[] = [this.foodDbList[5], this.foodDbList[6], this.foodDbList[7]];
+
 
 ngOnInit(){
-
 }
 
 ngAfterViewInit(){
@@ -26,8 +32,13 @@ ngAfterViewInit(){
 }
 
 reduceOrderQuantityFromItemWithIndex(i:number){
-  if(this.cartItemsList[i].quantity > 0){
+  if(this.cartItemsList[i].quantity > 1){
     this.cartItemsList[i].quantity--;
+    this.cartService.updateCart();
+  }
+  else if(this.cartItemsList[i].quantity == 1){
+    this.cartItemsList[i].quantity--;
+    this.cartService.removeCartItemGroupFromCart(this.cartItemsList[i].id);
     this.cartService.updateCart();
   }
 }
@@ -36,9 +47,19 @@ increaseOrderQuantityFromItemWithIndex(i:number){
   this.cartService.updateCart();
 }
 
-clearComponentCartAndLocalCart(){
+clearComponentCartAndAttLocalCart(){
   this.cartService.clearCart();
-  this.cartItemsList = [];
+  this.attLocalCartList()
 }
+
+addFoodToCart(food: Food){
+  let newCartItemGroup: CartItemGroup = new CartItemGroup(food, 1);
+  this.cartService.addCartItemGroupToCart(newCartItemGroup);
+}
+
+attLocalCartList(){
+  this.cartItemsList= this.cartService.cartItemGroupArray;
+}
+
 
 }

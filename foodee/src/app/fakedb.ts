@@ -50,7 +50,7 @@ const cheeseburger = new Food(
 );
 
 const iceCream = new Food(
-  1,
+  3,
   'Ice Cream',
   'A creamy dessert made from milk, cream, and sugar.',
   [milk, sugar, cream],
@@ -64,7 +64,7 @@ const iceCream = new Food(
 );
 
 const frenchFries = new Food(
-  2,
+  4,
   'French Fries',
   'Crispy deep-fried potato strips.',
   [potato],
@@ -78,7 +78,7 @@ const frenchFries = new Food(
 );
 
 const espresso = new Food(
-  3,
+  5,
   'Espresso',
   'Strong black coffee made by forcing steam through ground coffee beans.',
   [coffee],
@@ -92,7 +92,7 @@ const espresso = new Food(
 );
 
 const soda = new Food(
-  4,
+  6,
   'Soda',
   'A carbonated soft drink with sugar or artificial sweeteners.',
   [sugar],
@@ -106,7 +106,7 @@ const soda = new Food(
 );
 
 const coke = new Food(
-  5,
+  7,
   'Coke',
   'A popular brand of carbonated soft drink.',
   [sugar],
@@ -120,8 +120,8 @@ const coke = new Food(
 );
 
 const strawberryIceCreamCone = new Food(
-  6,
-  'Strawberry Ice Cream Cone',
+  8,
+  'Ice Cream',
   'A cone filled with strawberry-flavored ice cream.',
   [milk, sugar, strawberry, cream],
   4.00,

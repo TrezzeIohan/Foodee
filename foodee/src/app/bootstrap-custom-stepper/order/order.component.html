@@ -1,7 +1,7 @@
 <div class="container p-0" *ngIf="cartItemsList != []">
     <div class="d-flex justify-content-between">
         <h3 class="dark-text">Order</h3>
-        <button class="color-light-coral" (click)="clearComponentCartAndLocalCart()">Clear all</button>
+        <button class="color-light-coral" (click)="clearComponentCartAndAttLocalCart()">Clear all</button>
     </div>
 
     <div class="order-card px-4 py-3 mb-3 col-12 d-flex flex-row align-items-center justify-content-between pink-shadow" *ngFor="let cartItem of cartItemsList; index as i">
@@ -64,19 +64,19 @@
         </div>
 
 
-<!--
+
         <div class="col-12 d-flex flex-row mb-4 align-items-center justify-content-center">
-            <div *ngFor="let ingredient of food.listOfPossibleExtraIngredients, let i = index" (click)="manageActiveIngredients(ingredient)" class="col-4 d-flex flex-column justify-content-between m-1 custom-shadow bg-color-ivory custom-shadow py-3 px-2 ingredient-slide">
-                <img src="{{ ingredient.image }}" alt="" class="img-fluid">    
+            <div *ngFor="let food of suggestionsList" (click)="addFoodToCart(food)" class="col-4 d-flex flex-column justify-content-between m-1 custom-shadow bg-color-ivory custom-shadow py-3 px-2 ingredient-slide">
+                <img src="{{ food.image }}" alt="" class="img-fluid">    
                 <div class="d-flex justify-content-center flex-column">
-                    <p class="m-0 dark-text sm-text fw-normal text-center">{{ingredient.name}}</p>
-                    <p class="m-0 dark-text sm-text fw-normal text-center">+${{ingredient.price}}</p>
+                    <p class="m-0 dark-text sm-text fw-normal text-center">{{food.name}}</p>
+                    <p class="m-0 dark-text sm-text fw-normal text-center">${{food.price}}</p>
                 </div>
             </div>
 
 
         </div>
-        -->
+        
     </div>
 </div>
 
