@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CartService } from '../../cart.service';
 import { CartItemGroup } from '../../models/cart/cart-item-group.model';
-import { cloneDeep } from 'lodash';
 import { Food } from '../../models/food/food.model';
 import { NgFor, NgIf } from '@angular/common';
 import { DataService } from '../../data.service';
