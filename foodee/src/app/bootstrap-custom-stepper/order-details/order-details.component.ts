@@ -13,17 +13,28 @@ import { CartItemGroup } from '../../models/cart/cart-item-group.model';
 export class OrderDetailsComponent {
 cartservice = new CartService;
 cartItemsList: CartItemGroup[] = [];
-numberOfItems = this.cartservice.getItemCount();
-
+totalValue = this.cartservice.getTotalPrice();
 
 @Input() orderInfo: CartItemGroup[] = [];
 
-ngOnInit(){
-}
-
 orderTime = this.fakeOrderTime();
+deliveryTime = this.fakeOrderDeliveryTime();
 
 fakeOrderTime(): String{
+  const now = new Date();
+  now.setTime(now.getTime());
+  const formattedDate = now.toLocaleString('en-US', { 
+    year: 'numeric', 
+    month: '2-digit', 
+    day: '2-digit', 
+    hour: '2-digit', 
+    minute: '2-digit', 
+    hour12: false 
+});
+return formattedDate
+}
+
+fakeOrderDeliveryTime(): String{
     const now = new Date();
     now.setTime(now.getTime() + 30 * 60 * 1000);
     const formattedDate = now.toLocaleString('en-US', { 

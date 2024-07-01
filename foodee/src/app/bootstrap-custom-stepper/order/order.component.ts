@@ -4,6 +4,7 @@ import { CartItemGroup } from '../../models/cart/cart-item-group.model';
 import { Food } from '../../models/food/food.model';
 import { NgFor, NgIf } from '@angular/common';
 import { DataService } from '../../data.service';
+import { ChangeDetectorRef } from '@angular/core';
 
 
 @Component({
