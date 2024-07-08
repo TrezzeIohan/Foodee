@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, Renderer2, ElementRef } from '@angular/core';
 import { OrderComponent } from './order/order.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-bootstrap-custom-stepper',
@@ -11,9 +12,15 @@ import { OrderDetailsComponent } from './order-details/order-details.component';
 })
 export class BootstrapCustomStepperComponent implements AfterViewInit {
 
+  totalValue = 0;
+
   private lastExpandedButton: HTMLElement | null = null;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private el: ElementRef, private renderer: Renderer2, private cartService: CartService) {
+    this.cartService.cart$.subscribe(cartItems => {
+      this.totalValue = this.cartService.getTotalPrice();
+    });
+  }
 
   ngAfterViewInit(): void {
     this.checkStepButtons();
@@ -115,4 +122,9 @@ export class BootstrapCustomStepperComponent implements AfterViewInit {
 
   }
 
+  executeCartServiceGetTotalPrice(){
+    this.totalValue = this.cartService.getTotalPrice();
+    console.log(this.totalValue);
+    console.log(this.cartService.getItemCount());
+  }
 }

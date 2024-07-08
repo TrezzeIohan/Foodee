@@ -13,9 +13,9 @@ import { CartItemGroup } from '../../models/cart/cart-item-group.model';
 export class OrderDetailsComponent {
 cartservice = new CartService;
 cartItemsList: CartItemGroup[] = [];
-totalValue = this.cartservice.getTotalPrice();
 
 @Input() orderInfo: CartItemGroup[] = [];
+@Input() totalValue!: Number;
 
 orderTime = this.fakeOrderTime();
 deliveryTime = this.fakeOrderDeliveryTime();
@@ -48,6 +48,9 @@ fakeOrderDeliveryTime(): String{
   return formattedDate
 }
 
+executeCartServiceGetTotalPrice(){
+  this.totalValue = this.cartservice.getTotalPrice();
+}
 
 
 }

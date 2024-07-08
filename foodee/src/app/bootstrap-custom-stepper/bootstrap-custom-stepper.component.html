@@ -11,7 +11,7 @@
             </button>
         </div>
         <div id="progress1" class="bg-color-tea-rose"></div>
-        <div class="step-item">
+        <div class="step-item"  (click)="executeCartServiceGetTotalPrice()">
             <div class="step-title">
                 <p class="p-0 mb-1 fw-normal steps-text steps-text-light">Details</p>
             </div>
@@ -48,7 +48,7 @@
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
             <div class="card-body px-0 pt-0">
-                <app-order-details ></app-order-details>
+                <app-order-details [totalValue]="totalValue"></app-order-details>
             </div>
         </div>
     </div>
