@@ -2,12 +2,13 @@ import { Component, AfterViewInit, Renderer2, ElementRef } from '@angular/core';
 import { OrderComponent } from './order/order.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { OrderPaymentComponent } from './order-payment/order-payment.component';
+import { NextStepButtomComponent } from './next-step-buttom/next-step-buttom.component';
 import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-bootstrap-custom-stepper',
   standalone: true,
-  imports: [OrderComponent, OrderDetailsComponent, OrderPaymentComponent],
+  imports: [OrderComponent, OrderDetailsComponent, OrderPaymentComponent, NextStepButtomComponent],
   templateUrl: './bootstrap-custom-stepper.component.html',
   styleUrls: ['./bootstrap-custom-stepper.component.sass']
 })
