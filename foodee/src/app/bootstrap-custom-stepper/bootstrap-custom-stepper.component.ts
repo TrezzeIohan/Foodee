@@ -14,6 +14,8 @@ import { CartService } from '../cart.service';
 })
 export class BootstrapCustomStepperComponent implements AfterViewInit {
 
+  stepperButtonNumber : number = 1;
+
   totalValue = 0;
 
   private lastExpandedButton: HTMLElement | null = null;
@@ -126,7 +128,28 @@ export class BootstrapCustomStepperComponent implements AfterViewInit {
 
   executeCartServiceGetTotalPrice(){
     this.totalValue = this.cartService.getTotalPrice();
-    console.log(this.totalValue);
-    console.log(this.cartService.getItemCount());
+  }
+
+  simularClickNoStepper(stepperButton: number): void {
+    let targetButton: HTMLElement | null = null;
+
+    if (stepperButton === 1) {
+      targetButton = this.el.nativeElement.querySelector('#stepperEl2 .step-button');
+      this.stepperButtonNumber = 2;
+    } else if (stepperButton === 2) {
+      targetButton = this.el.nativeElement.querySelector('#stepperEl3 .step-button');
+      this.stepperButtonNumber = 3;
+    }
+  
+    if (targetButton) {
+      const isExpanded = targetButton.getAttribute('aria-expanded') === 'true';
+      if (!isExpanded) {
+        targetButton.click();
+      }
+    }
+  }
+
+  attVariableThatHandlesTheStepper(stepperButtomClicked: number){
+    this.stepperButtonNumber = stepperButtomClicked;
   }
 }

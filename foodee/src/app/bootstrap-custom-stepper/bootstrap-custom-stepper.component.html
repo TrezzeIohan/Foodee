@@ -1,7 +1,7 @@
 <div class="container p-0">
     <div class="accordion" id="accordionExample">
     <div class="steps px-3">
-        <div class="step-item">
+        <div class="step-item" id="stepperEl1" (click)="attVariableThatHandlesTheStepper(1)">
             <div class="step-title">
                 <p class="dark-text p-0 mb-1 fw-normal steps-text">My Order</p>
             </div>
@@ -11,7 +11,7 @@
             </button>
         </div>
         <div id="progress1" class="bg-color-tea-rose"></div>
-        <div class="step-item"  (click)="executeCartServiceGetTotalPrice()">
+        <div class="step-item" id="stepperEl2"  (click)="executeCartServiceGetTotalPrice(); attVariableThatHandlesTheStepper(2)" >
             <div class="step-title">
                 <p class="p-0 mb-1 fw-normal steps-text steps-text-light">Details</p>
             </div>
@@ -20,8 +20,8 @@
                 2
             </button>
         </div>
-        <div id="progress2" class="bg-color-tea-rose"></div>
-        <div class="step-item">
+        <div id="progress2"  class="bg-color-tea-rose"></div>
+        <div class="step-item" id="stepperEl3" (click)="attVariableThatHandlesTheStepper(3)">
             <div class="step-title">
                 <p class="dark-text p-0 mb-1 fw-normal steps-text steps-text-light">Payment</p>
             </div>
@@ -66,4 +66,4 @@
     </div>
 </div>
 
-<app-next-step-buttom ></app-next-step-buttom>
+<app-next-step-buttom [stepperButtonNumber]="stepperButtonNumber" (click)="simularClickNoStepper(stepperButtonNumber)"></app-next-step-buttom>
