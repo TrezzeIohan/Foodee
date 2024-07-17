@@ -10,5 +10,6 @@ import { NgIf } from '@angular/common';
 })
 export class NextStepButtomComponent {
   @Input() stepperButtonNumber!: Number;
+  @Input() totalValue!: Number;
 
 }

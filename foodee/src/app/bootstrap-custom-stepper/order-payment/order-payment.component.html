@@ -1,6 +1,6 @@
 <div class="container p-0 last-session" *ngIf="cartItemsList != []">
     <div class="d-flex justify-content-between">
-        <h3 class="dark-text">Order</h3>
+        <h3 class="dark-text">Payment Details</h3>
     </div>
 
     <div id="card-info" class="d-flex flex-column  p-4 mb-4 justify-content-between">
@@ -21,7 +21,9 @@
             </div>
     </div>
 
-
+    <div class="col-12 p-0 d-flex flex-column align-items-start " >
+        <h3 class="dark-text">Your Order</h3>
+    </div>
     <div class="order-card px-4 py-3 mb-3 col-12 d-flex flex-row align-items-center justify-content-between pink-shadow" *ngFor="let cartItem of cartItemsList; index as i">
         <div class="d-flex col-8">
             <img src="{{cartItem.food.image}}" alt="" class="img-fluid order-image me-3">
