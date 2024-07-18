@@ -140,6 +140,11 @@ export class BootstrapCustomStepperComponent implements AfterViewInit {
       targetButton = this.el.nativeElement.querySelector('#stepperEl3 .step-button');
       this.stepperButtonNumber = 3;
     }
+    else if(stepperButton == 3 && this.totalValue !== 0){}
+    else if(stepperButton == 3 && this.totalValue == 0){
+      targetButton = this.el.nativeElement.querySelector('#stepperEl1 .step-button');
+      this.stepperButtonNumber = 1;
+    }
   
     if (targetButton) {
       const isExpanded = targetButton.getAttribute('aria-expanded') === 'true';
