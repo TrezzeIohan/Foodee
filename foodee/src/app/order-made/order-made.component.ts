@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-made',
@@ -9,4 +10,22 @@ import { Component } from '@angular/core';
 })
 export class OrderMadeComponent {
 
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.animateImage();
+    }, 10000); // 6000 milliseconds = 6 seconds
+  }
+
+
+animateImage() {
+  const imgElement = document.querySelector('.img-fluid') as HTMLElement;
+  if (imgElement) {
+    imgElement.classList.add('animate-up');
+  }
+  setTimeout(() => {
+    this.router.navigate(['/home']);
+  }, 3000); // time for the animation to be smoto
+}
 }
