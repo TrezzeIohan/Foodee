@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-next-step-buttom',
@@ -11,5 +12,11 @@ import { NgIf } from '@angular/common';
 export class NextStepButtomComponent {
   @Input() stepperButtonNumber!: Number;
   @Input() totalValue!: Number;
+
+  constructor(private router: Router) {}
+
+  clearCartAndNavigateToOrderMadeCOmponent() {
+    this.router.navigate(['/order-made']);
+  }
 
 }

@@ -12,13 +12,6 @@ export class OrderMadeComponent {
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.animateImageAndRedirect();
-    }, 10000); // 6000 milliseconds = 6 seconds
-  }
-
-
 animateImageAndRedirect() {
   const imgElement = document.querySelector('.img-fluid') as HTMLElement;
   if (imgElement) {
