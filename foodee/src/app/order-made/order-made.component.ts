@@ -14,12 +14,12 @@ export class OrderMadeComponent {
 
   ngOnInit(): void {
     setTimeout(() => {
-      this.animateImage();
+      this.animateImageAndRedirect();
     }, 10000); // 6000 milliseconds = 6 seconds
   }
 
 
-animateImage() {
+animateImageAndRedirect() {
   const imgElement = document.querySelector('.img-fluid') as HTMLElement;
   if (imgElement) {
     imgElement.classList.add('animate-up');
