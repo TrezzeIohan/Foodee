@@ -3,6 +3,7 @@ import { Food } from '../models/food/food.model';
 import { Ingredient } from '../models/food/ingredient/ingredient.model';
 import { NgClass, NgFor } from '@angular/common';
 import { DataService } from '../data.service';
+import { NavigationService } from '../navigation.service';
 import { ActivatedRoute } from '@angular/router';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { FoodPageNavbarComponent } from '../food-page-navbar/food-page-navbar.component';
@@ -19,6 +20,7 @@ export class FoodPageComponent {
   constructor(
     private dataService : DataService,
     private route: ActivatedRoute,
+    private navigationService: NavigationService
   ){}
 
   id = this.route.snapshot.paramMap.get('id');
@@ -65,7 +67,9 @@ export class FoodPageComponent {
     }
   } 
 
-
+  goBack(){
+    this.navigationService.goBackToParent()
+  }
 
 
 

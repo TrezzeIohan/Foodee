@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, Event } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 @Injectable({
@@ -10,7 +10,7 @@ export class NavigationService {
 
   constructor(private router: Router) {
     this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
+      filter((event: Event): event is NavigationEnd => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       this.history.push(event.urlAfterRedirects);
     });
@@ -20,16 +20,29 @@ export class NavigationService {
     return this.history;
   }
 
-  getLastUrl(): string {
-    if (this.history.length > 1) {
-      return this.history[this.history.length - 2];
+  goBack(): void {
+    this.history.pop();
+    if (this.history.length > 0) {
+      this.router.navigate([this.history[this.history.length - 1]]);
     } else {
-      return '/'; // Default to home or some other default route
+      this.router.navigate(['/']); // or some default route
     }
   }
 
-  navigateBack(): void {
-    const lastUrl = this.getLastUrl();
-    this.router.navigateByUrl(lastUrl);
+  goBackToParent(): void {
+    this.history.pop();
+    while (this.history.length > 0 && this.isNestedRoute(this.history[this.history.length - 1])) {
+      this.history.pop();
+    }
+    if (this.history.length > 0) {
+      this.router.navigate([this.history[this.history.length - 1]]);
+    } else {
+      this.router.navigate(['/']); // or some default route
+    }
+  }
+
+  private isNestedRoute(url: string): boolean {
+    // Define your logic to determine if the route is nested
+    return url.includes('nested');
   }
 }
