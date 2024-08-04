@@ -2,18 +2,19 @@ import { Component } from '@angular/core';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { NgClass } from '@angular/common';
 import { NavigationBarComponent } from '../navigation-bar/navigation-bar.component';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [SlickCarouselModule, NgClass, NavigationBarComponent],
+  imports: [SlickCarouselModule, NgClass, NavigationBarComponent, RouterLink],
   templateUrl: './main.component.html',
   styleUrl: './main.component.sass'
 })
 export class MainComponent {
   // COnfiguration needed to figure the current route and change the style of the NavBar
   public currentRoute: string = '';
-
+  constructor(private router: Router) {}
 
   ngOnInit() {
   }
@@ -50,5 +51,6 @@ slides = [
   slickInit(e: any) {
     console.log('slick initialized');
   }
+
 
 }

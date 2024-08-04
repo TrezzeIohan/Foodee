@@ -19,6 +19,10 @@ const coffee = new Ingredient('13', 'Coffee', 0.3, new Nutrition(2, 0, 0, 0), '.
 const potato = new Ingredient('14', 'Potato', 0.2, new Nutrition(77, 17, 0.1, 2), './assets/imgs/potato.svg');
 const strawberry = new Ingredient('15', 'Strawberry', 0.5, new Nutrition(32, 8, 0.3, 1), './assets/imgs/strawberry.svg');
 const cream = new Ingredient('16', 'Cream', 0.8, new Nutrition(50, 0.6, 5.5, 0.3), './assets/imgs/cream.svg');
+const bun = new Ingredient('17', 'Bun', 1.0, new Nutrition(150, 30, 2, 5), './assets/imgs/bun.svg');
+const sausage = new Ingredient('18', 'Sausage', 2.5, new Nutrition(200, 1, 18, 10), './assets/imgs/sausage.svg');
+const ketchup = new Ingredient('19', 'Ketchup', 0.2, new Nutrition(20, 5, 0, 0), './assets/imgs/ketchup.svg');
+const mustard = new Ingredient('20', 'Mustard', 0.2, new Nutrition(15, 1, 0, 0), './assets/imgs/mustard.svg');
 
 // Comidas
 const pizzaMargherita = new Food(
@@ -30,7 +34,7 @@ const pizzaMargherita = new Food(
   false,
   true,
   '../assets/imgs/pizza.svg',
-  [shrimp, mushroom, bellPepper],
+  [shrimp, mushroom, bellPepper], 
   [],
   ['Italian', 'Vegetarian']
 );
@@ -133,5 +137,29 @@ const strawberryIceCreamCone = new Food(
   ['Delicious', 'Flavorful']
 );
 
+const hotdog = new Food(
+  9,
+  'Hotdog',
+  'A delicious hotdog with a sausage, bun, and condiments.',
+  [bun, sausage, ketchup, mustard],
+  4.99,
+  false,
+  false,
+  './assets/imgs/hotdog.svg',
+  [onions, cheese],
+  [],
+  ['Classic Taste', 'Street Food']
+);
+
 // Exportando os dados
-export const foodList = [pizzaMargherita, cheeseburger, iceCream, frenchFries, espresso, soda, coke, strawberryIceCreamCone];
+export const foodList = [
+  pizzaMargherita,
+  cheeseburger,
+  iceCream,
+  frenchFries,
+  espresso,
+  soda,
+  coke,
+  strawberryIceCreamCone,
+  hotdog // Added the hotdog instance here
+];
