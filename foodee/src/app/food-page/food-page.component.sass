@@ -2,7 +2,7 @@
 #food-page-top-section
   border-bottom-left-radius: 25px
   border-bottom-right-radius: 25px
-  height: 55.72vh
+  height: 40.72vh
 
 
 #food-page-title
@@ -18,12 +18,12 @@
   font-weight: 600
   z-index: 1
 
-
 #food-page-top-image
-  transform: translate3d(5vw, 5vh, 0)
-  z-index: 0
-  width: 90.0vw
-  height: 40.0vh
+    position: relative
+    bottom: 10vh
+    left: 15vw
+    width: 80vw
+    height: 35vh
 
 .dark-text
   color: #3D405B
@@ -51,3 +51,56 @@
 
 #description-text
   font-weight: 400
+
+.res-img
+    width: 100%
+    height: auto
+
+@media (min-width: 500px) and (max-width: 800px) and (max-height: 913px)
+  #food-page-top-image
+    bottom: 20vh 
+    left: 25vw 
+    width: 60vw 
+    height: 38vh 
+
+@media (min-width: 360px) and (max-width: 380px)
+  #food-page-top-image
+    bottom: 15vh
+    left: 32vw
+    width: 70vw
+    height: 38vh
+
+@media (min-width: 381px) and (max-width: 725px)
+  #food-page-top-image
+    bottom: 10vh
+    left: 20vw
+    width: 78vw
+    height: 38vh
+
+@media (min-width: 726px) and (max-width: 900px)
+  #food-page-top-image
+    bottom: 15vh
+    left: 20vw
+    width: 60vw
+    height: 38vh
+     
+@media (min-width: 901px) and (max-width: 1800px) and (min-height: 700px)
+  #food-page-top-image
+    bottom: 7vh
+    left: 15vw
+    width: 55vw
+    height: 38vh
+
+@media (min-width: 901px) and (max-width: 1800px) and (max-height: 699px)
+  #food-page-top-image
+    bottom: 30vh
+    left: 30vw
+    width: 30vw
+    height: 38vh
+
+@media (min-width: 901px) and (max-width: 1800px) and (min-height: 700px) and (max-height: 801px)
+  #food-page-top-image
+    bottom: 20vh
+    left: 30vw
+    width: 30vw
+    height: 38vh
