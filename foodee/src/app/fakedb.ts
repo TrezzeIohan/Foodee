@@ -3,7 +3,7 @@ import { Ingredient } from './models/food/ingredient/ingredient.model';
 import { Nutrition } from './models/food/ingredient/nutrition/nutrition.model';
 
 // Ingredientes
-const cheese = new Ingredient('1', 'Cheese', 2.0, new Nutrition(100, 1, 8, 6), 'cheese.jpg');
+const cheese = new Ingredient('1', 'Cheese', 2.0, new Nutrition(100, 1, 8, 6), './assets/imgs/cheddar.svg');
 const tomato = new Ingredient('2', 'Tomato', 0.5, new Nutrition(20, 4, 0.2, 1), './assets/imgs/tomato.svg');
 const dough = new Ingredient('3', 'Dough', 1.5, new Nutrition(200, 40, 2, 6), 'dough.jpg');
 const cheddar = new Ingredient('4', 'Cheddar', 1.5, new Nutrition(113, 0.1, 9.4, 7.0), './assets/imgs/cheddar.svg');
@@ -56,12 +56,12 @@ const cheeseburger = new Food(
 const iceCream = new Food(
   3,
   'Ice Cream',
-  'A creamy dessert made from milk, cream, and sugar.',
+  'A delicious and creamy dessert made from milk, cocoa, cream, and sugar.',
   [milk, sugar, cream],
   3.50,
   false,
   false,
-  '../assets/imgs/icecream.svg',
+  '../assets/imgs/choc-icecream.svg',
   [],
   [],
   ['Classic Taste', 'Delicious']
@@ -126,12 +126,12 @@ const coke = new Food(
 const strawberryIceCreamCone = new Food(
   8,
   'Ice Cream',
-  'A cone filled with strawberry-flavored ice cream.',
+  'A strawberry-flavored ice cream.',
   [milk, sugar, strawberry, cream],
   4.00,
   false,
   false,
-  '../assets/imgs/ice-cream-cone.svg',
+  '../assets/imgs/icecream.svg',
   [],
   [],
   ['Delicious', 'Flavorful']

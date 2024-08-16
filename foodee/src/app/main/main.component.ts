@@ -69,9 +69,7 @@ slides = [
     
   };
   
-  slickInit(e: any) {
-    console.log('slick initialized');
-  }
+
 
 
 }

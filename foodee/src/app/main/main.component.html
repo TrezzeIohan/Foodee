@@ -32,7 +32,7 @@
             <ngx-slick-carousel class="carousel d-flex align-items-center" 
                         #slickModal="slick-carousel" 
                         [config]="slideConfig" 
-                        (init)="slickInit($event)">
+                        >
                         @for (slide of slides; track slide.id) {
             <div ngxSlickItem class="big-slide d-flex flex-row justify-content-around m-1 ps-4 py-2 custom-shadow" [ngClass]="slide.bgColorClass">
                 <div class="d-flex justify-content-center flex-column col-7">
@@ -52,7 +52,7 @@
             <ngx-slick-carousel class="carousel d-flex align-items-center" 
                         #slickModal="slick-carousel" 
                         [config]="smallSlideConfig" 
-                        (init)="slickInit($event)">
+                        >
                         @for (slide of smallSlides; track slide.id) {
             <div ngxSlickItem class="small-slide d-flex flex-column m-1" [ngClass]="slide.bgColorClass">
                 <div class="d-flex justify-content-center align-items-center flex-column pt-3">
