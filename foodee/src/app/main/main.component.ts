@@ -30,6 +30,17 @@ slides = [
     "slidesToShow": 1, 
     "slidesToScroll": 1, 
     "arrows": false,
+    centerMode: true,
+        centerPadding: '40px', // Ajuste este valor para aumentar ou diminuir a visibilidade dos slides laterais
+        responsive: [
+            {
+                breakpoint: 768, // Em dispositivos menores
+                settings: {
+                    centerPadding: '20px',
+                    slidesToShow: 1
+                }
+            }
+        ]
   };
 
 // Small Slide Config
@@ -45,6 +56,16 @@ slides = [
     "slidesToScroll": 2, 
     "arrows": false,
     "swipeToSLide": true,
+    centerMode: true,
+    centerPadding: '40px', // Ajuste este valor para aumentar ou diminuir a visibilidade dos slides laterais
+    responsive: [
+        {
+            breakpoint: 768, // Em dispositivos menores
+            settings: {
+                centerPadding: '20px',
+            }
+        }
+    ]
     
   };
   
