@@ -56,6 +56,8 @@ slides = [
     "slidesToScroll": 2, 
     "arrows": false,
     "swipeToSLide": true,
+    infinite: true, // Permite scroll infinito
+    swipeToSlide: true, // Permite deslizar diretamente para o slide para onde o dedo foi movido
     centerMode: true,
     centerPadding: '40px', // Ajuste este valor para aumentar ou diminuir a visibilidade dos slides laterais
     responsive: [
