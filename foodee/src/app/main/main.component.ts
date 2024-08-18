@@ -30,14 +30,15 @@ slides = [
     "slidesToShow": 1, 
     "slidesToScroll": 1, 
     "arrows": false,
-    centerMode: true,
+    centerMode: false,
         centerPadding: '40px', // Ajuste este valor para aumentar ou diminuir a visibilidade dos slides laterais
         responsive: [
             {
                 breakpoint: 768, // Em dispositivos menores
                 settings: {
                     centerPadding: '20px',
-                    slidesToShow: 1
+                    slidesToShow: 1,
+                    centerMode: true,
                 }
             }
         ]
@@ -58,13 +59,14 @@ slides = [
     "swipeToSLide": true,
     infinite: true, // Permite scroll infinito
     swipeToSlide: true, // Permite deslizar diretamente para o slide para onde o dedo foi movido
-    centerMode: true,
+    centerMode: false,
     centerPadding: '40px', // Ajuste este valor para aumentar ou diminuir a visibilidade dos slides laterais
     responsive: [
         {
             breakpoint: 768, // Em dispositivos menores
             settings: {
                 centerPadding: '20px',
+                centerMode: true
             }
         }
     ]

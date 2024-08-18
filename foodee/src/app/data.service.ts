@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Food } from './models/food/food.model';
 import { foodList } from './fakedb';
 import { Ingredient } from './models/food/ingredient/ingredient.model';
+import { FoodCategory } from './models/food-category/food-category.model';
+import { categoryList } from './fakedb';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +11,7 @@ import { Ingredient } from './models/food/ingredient/ingredient.model';
 export class DataService {
 
   private foods: Food[] = foodList;
+  private categories: FoodCategory[] = categoryList
 
   constructor() { }
 
@@ -42,4 +45,17 @@ export class DataService {
       [...food.tags] 
     );
   }
+
+  getCategoryList(): FoodCategory[] {
+    return this.categories.map(category => this.cloneCategory(category))
+  }
+
+  private cloneCategory(category: FoodCategory): FoodCategory {
+    return new FoodCategory(
+      category.id,
+      category.name,
+      [...category.foodIds]
+    );
+  }
+
 }

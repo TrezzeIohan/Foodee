@@ -11,6 +11,6 @@ export const routes: Routes = [
     { path: 'food-page/:id', component: FoodPageComponent},
     { path: 'my-cart', component: MyCartComponent},
     { path: 'order-made', component: OrderMadeComponent},
-    { path: 'food-list', component: FoodListComponent},
+    { path: 'food-list/:id', component: FoodListComponent},
     { path: '**', redirectTo: '/main', pathMatch: 'full' }  // Rota para páginas não encontradas (opcional)
 ];

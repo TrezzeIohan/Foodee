@@ -1,8 +1,9 @@
 import { Food } from './models/food/food.model';
 import { Ingredient } from './models/food/ingredient/ingredient.model';
 import { Nutrition } from './models/food/ingredient/nutrition/nutrition.model';
+import { FoodCategory } from './models/food-category/food-category.model';
 
-// Ingredientes
+// Ingredients
 const cheese = new Ingredient('1', 'Cheese', 2.0, new Nutrition(100, 1, 8, 6), './assets/imgs/cheddar.svg');
 const tomato = new Ingredient('2', 'Tomato', 0.5, new Nutrition(20, 4, 0.2, 1), './assets/imgs/tomato.svg');
 const dough = new Ingredient('3', 'Dough', 1.5, new Nutrition(200, 40, 2, 6), 'dough.jpg');
@@ -24,7 +25,7 @@ const sausage = new Ingredient('18', 'Sausage', 2.5, new Nutrition(200, 1, 18, 1
 const ketchup = new Ingredient('19', 'Ketchup', 0.2, new Nutrition(20, 5, 0, 0), './assets/imgs/ketchup.svg');
 const mustard = new Ingredient('20', 'Mustard', 0.2, new Nutrition(15, 1, 0, 0), './assets/imgs/mustard.svg');
 
-// Comidas
+// Foods
 const pizzaMargherita = new Food(
   1,
   'Pizza Margherita',
@@ -151,7 +152,7 @@ const hotdog = new Food(
   ['Classic Taste', 'Street Food']
 );
 
-// Exportando os dados
+// Exporting the Data
 export const foodList = [
   pizzaMargherita,
   cheeseburger,
@@ -161,5 +162,52 @@ export const foodList = [
   soda,
   coke,
   strawberryIceCreamCone,
-  hotdog // Added the hotdog instance here
+  hotdog
+];
+
+
+/* Categories */ 
+const all = new FoodCategory(
+  1,
+  "All",
+  [1,2,3,4,5,6,7,8,9]
+);
+
+const favorites = new FoodCategory(
+  2,
+  "Favorites",
+  [1,2,4,7,9]
+);
+
+const desserts = new FoodCategory(
+  3,
+  "Desserts",
+  [3,8]
+);
+
+const fastFood = new FoodCategory(
+  4,
+  "Fast Food",
+  [1,2,4,9]
+);
+
+const beverages = new FoodCategory(
+  5,
+  "Beverages",
+  [5,6,7]
+);
+
+const italian = new FoodCategory(
+  6,
+  "Italian Food",
+  [1]
+);
+
+export const categoryList = [
+  all,
+  favorites,
+  desserts,
+  fastFood,
+  beverages,
+  italian
 ];
