@@ -29,6 +29,7 @@ const mustard = new Ingredient('20', 'Mustard', 0.2, new Nutrition(15, 1, 0, 0),
 const pizzaMargherita = new Food(
   1,
   'Pizza Margherita',
+  "Classic Italian pizza",
   'Classic Italian pizza with cheese and tomato.',
   [cheese, tomato, dough],
   12.99,
@@ -43,6 +44,7 @@ const pizzaMargherita = new Food(
 const cheeseburger = new Food(
   2,
   'Mr. Cheezy',
+  "A juicy Cheese Bacon Burger",
   'Each Mr.Cheeze® includes a delectable Cheese Bacon Burger, featuring thick-cut applewood smoked bacon atop a juicy quarter-pound patty.',
   [cheese, tomato, dough], // Assuming dough as a bun here
   5.99,
@@ -57,6 +59,7 @@ const cheeseburger = new Food(
 const iceCream = new Food(
   3,
   'Ice Cream',
+  "Rich and creamy dessert",
   'A delicious and creamy dessert made from milk, cocoa, cream, and sugar.',
   [milk, sugar, cream],
   3.50,
@@ -71,7 +74,8 @@ const iceCream = new Food(
 const frenchFries = new Food(
   4,
   'French Fries',
-  'Crispy deep-fried potato strips.',
+  'Golden and crispy potato strips',
+  'Golden and crispy deep-fried potato strips.',
   [potato],
   2.00,
   false,
@@ -85,6 +89,7 @@ const frenchFries = new Food(
 const espresso = new Food(
   5,
   'Espresso',
+  'Strong, bold black coffee',
   'Strong black coffee made by forcing steam through ground coffee beans.',
   [coffee],
   2.50,
@@ -99,6 +104,7 @@ const espresso = new Food(
 const soda = new Food(
   6,
   'Soda',
+  'A refreshing carbonated soft drink',
   'A carbonated soft drink with sugar or artificial sweeteners.',
   [sugar],
   1.50,
@@ -113,6 +119,7 @@ const soda = new Food(
 const coke = new Food(
   7,
   'Coke',
+  'A classic carbonated soft drink',
   'A popular brand of carbonated soft drink.',
   [sugar],
   1.50,
@@ -127,7 +134,8 @@ const coke = new Food(
 const strawberryIceCreamCone = new Food(
   8,
   'Ice Cream',
-  'A strawberry-flavored ice cream.',
+  'A sweet and creamy ice cream',
+  'A sweet and creamy strawberry-flavored ice cream.',
   [milk, sugar, strawberry, cream],
   4.00,
   false,
@@ -141,6 +149,7 @@ const strawberryIceCreamCone = new Food(
 const hotdog = new Food(
   9,
   'Hotdog',
+  'A tasty hotdog served in a soft bun',
   'A delicious hotdog with a sausage, bun, and condiments.',
   [bun, sausage, ketchup, mustard],
   4.99,
@@ -199,7 +208,7 @@ const beverages = new FoodCategory(
 
 const italian = new FoodCategory(
   6,
-  "Italian Food",
+  "Italian",
   [1]
 );
 

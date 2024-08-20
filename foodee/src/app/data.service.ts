@@ -34,6 +34,7 @@ export class DataService {
     return new Food(
       food.id,
       food.name,
+      food.shortDescription,
       food.description,
       [...food.ingredients], 
       food.price,

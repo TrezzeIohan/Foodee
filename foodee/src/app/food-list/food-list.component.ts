@@ -4,7 +4,7 @@ import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
 import { FoodCategory } from '../models/food-category/food-category.model';
 import { Food } from '../models/food/food.model';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { NgFor, NgForOf } from '@angular/common';
 
 @Component({
@@ -19,6 +19,7 @@ export class FoodListComponent {
     private navigationService: NavigationService,
     private dataService: DataService,
     private route: ActivatedRoute,
+    private router: Router,
   ) {}
 
   goBack(){
@@ -31,5 +32,10 @@ export class FoodListComponent {
   categories : FoodCategory[] = this.dataService.getCategoryList();
 
   selectedCategory = this.categories.find(category => category.id === this.categoryId) || { id: null, name: 'Unknown', foodIds: [] };
+
+  
+  changeSelectedCategory(newCategoryId : number){
+    this.selectedCategory = this.categories.find(category => category.id === newCategoryId) || { id: null, name: 'Unknown', foodIds: [] };
+  }
 
 }

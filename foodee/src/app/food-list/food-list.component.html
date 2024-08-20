@@ -16,11 +16,27 @@
 </div>
 
 <div class="container bg-color-true-white overflow-visible">
-    <div class="row pb-3 overflow-hidden">
+    <div class="row pb-3">
         <div class="col-12 pt-2 px-3 d-flex flex-column">
             <!-- Food Title and Close Button -->
             <div class="d-flex flex-column justify-content-between col-12">
-                <h1 class="main-text mb-3 p-md-0">{{selectedCategory.name}}</h1>
+
+                <div class="d-flex flex-row justify-content-between pb-1 ">
+                    <h1 class="main-text mb-3 p-md-0">{{selectedCategory.name}}</h1>
+
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownCategories" data-bs-toggle="dropdown" aria-expanded="false">
+                          Categories
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownCategories">
+                            <div *ngFor="let category of categories">
+                                <li><a class="dropdown-item" (click)="changeSelectedCategory(category.id)">{{category.name}}</a></li>
+                            </div>
+                        </ul>
+                      </div>
+                      
+                </div>
+
                 
                 
                 <div *ngFor="let foodId of selectedCategory.foodIds" [routerLink]="['/food-page', foodId]" class="d-flex flex-row custom-card custom-shadow bg-white justify-content-center align-items-md-center py-3 mb-3 col-12">
@@ -28,8 +44,8 @@
                     <img [src]="foodList[foodId - 1].image" alt="" class="card-image img-fluid me-3">
                                 
                     <div class="col-7 d-flex flex-column align-items-start">
-                        <h3 class="mb-0 best-offers-card-title">Frenchdog</h3>
-                        <p class="mb-0 best-offers-card-text">Tasty&Spicy <span><img src="../../assets/imgs/other/hot-pepper.svg" alt="" class="sm-emoji"></span><span><img src="../../assets/imgs/other/hot-pepper.svg" alt="" class="sm-emoji"></span><span><img src="../../assets/imgs/other/hot-pepper.svg" alt="" class="sm-emoji"></span></p>
+                        <h3 class="mb-0 best-offers-card-title">{{foodList[foodId - 1].name}}</h3>
+                        <p class="mb-0 best-offers-card-text">{{foodList[foodId - 1].shortDescription}}</p>
                     </div>
                 </div>
                 

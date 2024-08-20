@@ -60,6 +60,7 @@ export class CartService {
         new Food(
           item.food.id,
           item.food.name,
+          item.food.shortDescription,
           item.food.description,
           item.food.ingredients,
           item.food.basePrice,

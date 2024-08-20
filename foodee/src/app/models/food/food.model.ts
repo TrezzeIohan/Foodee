@@ -8,6 +8,7 @@ export class Food {
     constructor(
       public id: number,
       public name: string,
+      public shortDescription: string,
       public description: string,
       public ingredients: Ingredient[],
       public basePrice: number,
