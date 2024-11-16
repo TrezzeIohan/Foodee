@@ -46,10 +46,10 @@ slides = [
 
 // Small Slide Config
   smallSlides = [
-    {id: 1, img: "../assets/imgs/hamburger.svg", title: "Burgers", bgColorClass:"bg-color-flax"},
-    {id: 2, img: "../assets/imgs/fries.svg", title: "Fries", bgColorClass:"bg-color-tea-rose"},
-    {id: 3, img: "../assets/imgs/soda.svg", title: "Drinks", bgColorClass:"bg-color-ash-grey"},
-    {id: 4, img: "../assets/imgs/choc.svg", title: "Desserts", bgColorClass:"bg-color-tropical-indigo"}
+    {id: 1, img: "../assets/imgs/hamburger.svg", title: "Burgers", bgColorClass:"bg-color-flax", pathId:4},
+    {id: 2, img: "../assets/imgs/fries.svg", title: "Fries", bgColorClass:"bg-color-tea-rose", pathId:4},
+    {id: 3, img: "../assets/imgs/soda.svg", title: "Drinks", bgColorClass:"bg-color-ash-grey", pathId:5},
+    {id: 4, img: "../assets/imgs/choc.svg", title: "Desserts", bgColorClass:"bg-color-tropical-indigo", pathId:3},
   ];
 
   smallSlideConfig = {
@@ -57,7 +57,7 @@ slides = [
     "slidesToScroll": 2, 
     "arrows": false,
     "swipeToSLide": true,
-    infinite: true, // Permite scroll infinito
+    initialSlide: 0,
     swipeToSlide: true, // Permite deslizar diretamente para o slide para onde o dedo foi movido
     centerMode: false,
     centerPadding: '40px', // Ajuste este valor para aumentar ou diminuir a visibilidade dos slides laterais
@@ -66,12 +66,19 @@ slides = [
             breakpoint: 768, // Em dispositivos menores
             settings: {
                 centerPadding: '20px',
-                centerMode: true
+                centerMode: false
             }
         }
     ]
     
   };
+  // O slide com bug só está bugado quando está naquela posição inicial. Se sai ele funciona, se volta ele buga.
+  // Verificar como é possível adicionar o (click) a esse slide depois dele terminar de renderizar.
+
+  redirectToFoodList(foodCategoryId : number){
+    console.log("test")
+    this.router.navigate(['/food-list', foodCategoryId]);
+  }
   
 
 

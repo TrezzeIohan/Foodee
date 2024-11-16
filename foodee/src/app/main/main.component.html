@@ -54,7 +54,7 @@
                         [config]="smallSlideConfig" 
                         >
                         @for (slide of smallSlides; track slide.id) {
-            <div ngxSlickItem class="small-slide d-flex flex-column m-1" [ngClass]="slide.bgColorClass">
+            <div ngxSlickItem class="small-slide d-flex flex-column m-1" [ngClass]="slide.bgColorClass" (click)="redirectToFoodList(slide.pathId)">
                 <div class="d-flex justify-content-center align-items-center flex-column pt-3">
                     <p class="m-0 fw-normal">{{slide.title}}</p>
                     <img src="{{slide.img}}" alt="" class="small-slide-img">
