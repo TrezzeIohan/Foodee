@@ -10,15 +10,21 @@ import { CartService } from '../../cart.service';
   templateUrl: './next-step-buttom.component.html',
   styleUrl: './next-step-buttom.component.sass'
 })
-export class NextStepButtomComponent {
+export class NextStepButtomComponent implements OnChanges {
   @Input() stepperButtonNumber!: Number;
   @Input() totalValue!: Number;
+  formattedTotalValue: string = '';
 
   constructor(private router: Router, private cartService: CartService) {}
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['totalValue']) {
+      this.formattedTotalValue = this.totalValue.toFixed(2);
+    }
+  }
 
   clearCartAndNavigateToOrderMadeCOmponent() {
     this.router.navigate(['/order-made']);
     this.cartService.clearCart();
   }
-
 }
